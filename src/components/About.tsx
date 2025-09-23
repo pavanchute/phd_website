@@ -37,9 +37,9 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
           <div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">About BuildCraft</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">About Pavan Home Decor</h2>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Founded in 2008, BuildCraft has established itself as a premier construction company 
+              Founded in 2008, Pavan Home Decor has established itself as a premier construction company 
               in the region. We combine traditional craftsmanship with modern techniques to deliver 
               exceptional results for every project.
             </p>

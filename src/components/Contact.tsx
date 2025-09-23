@@ -95,17 +95,20 @@ const Contact = () => {
             </div>
 
             <div className="mt-8 p-6 bg-blue-800 rounded-lg">
-              <h4 className="text-lg font-semibold text-white mb-3">Emergency Services Available</h4>
+              <h4 className="text-lg font-semibold text-white mb-3">24/7 Design Consultation</h4>
               <p className="text-gray-200 mb-4">
-                We provide 24/7 emergency construction services for urgent repairs and damage restoration.
+                We provide round-the-clock design consultation services for your home decor needs.
               </p>
               <a 
                 href="tel:+15551234567" 
                 className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors inline-flex items-center"
               >
                 <Phone className="h-4 w-4 mr-2" />
-                Emergency Hotline
+                Design Hotline
               </a>
+              <p className="text-gray-200 mt-4">
+                Ready to start your next home decor project? Contact us today for a free consultation and quote.
+              </p>
             </div>
           </div>
 

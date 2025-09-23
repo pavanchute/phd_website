@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Menu, X, Hammer } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,28 +19,34 @@ const Header = () => {
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'What We Do', href: '#services' },
+    { name: 'Projects', href: '#projects' },
     { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
   ];
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false);
+    if (isHomePage) {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        setIsMenuOpen(false);
+      }
+    } else {
+      // If not on home page, navigate to home page with hash
+      window.location.href = `/${href}`;
     }
   };
 
   return (
-    <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
+    <header className={`${isHomePage ? 'fixed' : 'relative'} w-full top-0 z-50 transition-all duration-300 ${
+      isScrolled || !isHomePage ? 'bg-white shadow-lg' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center space-x-2">
-            <Hammer className={`h-8 w-8 ${isScrolled ? 'text-blue-700' : 'text-white'}`} />
-            <span className={`text-2xl font-bold ${isScrolled ? 'text-blue-700' : 'text-white'}`}>
-              BuildCraft
+            <Hammer className={`h-8 w-8 ${isScrolled || !isHomePage ? 'text-blue-700' : 'text-white'}`} />
+            <span className={`text-2xl font-bold ${isScrolled || !isHomePage ? 'text-blue-700' : 'text-white'}`}>
+              Pavan Home Decor
             </span>
           </div>
 
@@ -47,7 +56,7 @@ const Header = () => {
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
                 className={`text-base font-medium transition-colors hover:text-orange-600 ${
-                  isScrolled ? 'text-gray-700' : 'text-white'
+                  isScrolled || !isHomePage ? 'text-gray-700' : 'text-white'
                 }`}
               >
                 {item.name}
@@ -60,9 +69,9 @@ const Header = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
-              <X className={`h-6 w-6 ${isScrolled ? 'text-gray-700' : 'text-white'}`} />
+              <X className={`h-6 w-6 ${isScrolled || !isHomePage ? 'text-gray-700' : 'text-white'}`} />
             ) : (
-              <Menu className={`h-6 w-6 ${isScrolled ? 'text-gray-700' : 'text-white'}`} />
+              <Menu className={`h-6 w-6 ${isScrolled || !isHomePage ? 'text-gray-700' : 'text-white'}`} />
             )}
           </button>
         </div>

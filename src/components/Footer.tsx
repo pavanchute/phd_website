@@ -16,11 +16,11 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <Hammer className="h-8 w-8 text-orange-500" />
-              <span className="text-2xl font-bold">BuildCraft</span>
+              <span className="text-2xl font-bold">Pavan Home Decor</span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              Building excellence since 2008. We are your trusted partner for all construction, 
-              renovation, and maintenance needs. Quality craftsmanship, reliable service, 
+              Creating beautiful homes since 2008. We are your trusted partner for all home decor, 
+              interior design, and renovation needs. Quality craftsmanship, reliable service, 
               exceptional results.
             </p>
             <div className="space-y-2">
@@ -30,11 +30,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-orange-500" />
-                <span className="text-gray-300">info@buildcraft.com</span>
+                <span className="text-gray-300">info@pavanhomedecor.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4 text-orange-500" />
-                <span className="text-gray-300">123 Construction Ave, Building City, BC 12345</span>
+                <span className="text-gray-300">123 Design Street, Decor City, DC 12345</span>
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@ const Footer = () => {
         <div className="border-t border-gray-700 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} BuildCraft Construction. All rights reserved.
+              © {new Date().getFullYear()} Pavan Home Decor. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors text-sm">
