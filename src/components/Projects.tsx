@@ -1,19 +1,20 @@
 import React from 'react';
 import { ArrowRight, Calendar, MapPin, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import project1Image from '../assets/project1.jpg';
 
 const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'Modern Family Residence',
-      category: 'Residential',
-      location: 'Beverly Hills, CA',
-      completionDate: '2024',
-      clientType: 'Private Family',
-      image: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-      description: 'A stunning 4,500 sq ft modern family home featuring open-concept living, sustainable materials, and smart home technology.',
-      highlights: ['Smart Home Integration', 'Sustainable Materials', 'Open Concept Design', 'Energy Efficient']
+      title: 'Maruti Suzuki Showroom',
+      category: 'Commercial',
+      location: 'Koradi Panjra Police Station, Nagpur',
+      completionDate: 'In Progress',
+      clientType: 'Company',
+      image: project1Image,
+      description: 'Electrical installation and maintenance for showroom with branded lighting, safety systems, and dedicated power zones.',
+      highlights: ['Electrical Setup', 'Load-balanced circuit']
     },
     {
       id: 2,
@@ -25,6 +26,17 @@ const Projects = () => {
       image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
       description: 'A 12-story commercial office building with modern amenities, flexible workspaces, and LEED Gold certification.',
       highlights: ['LEED Gold Certified', '12 Stories', 'Modern Amenities', 'Flexible Workspaces']
+    },
+    {
+      id: 3,
+      title: 'Luxury Hotel Renovation',
+      category: 'Hospitality',
+      location: 'San Francisco, CA',
+      completionDate: '2024',
+      clientType: 'Hotel Chain',
+      image: 'https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+      description: 'Complete renovation of a historic 200-room luxury hotel, preserving architectural heritage while adding modern luxury.',
+      highlights: ['Historic Preservation', '200 Rooms', 'Luxury Finishes', 'Heritage Architecture']
     },
     {
       id: 3,

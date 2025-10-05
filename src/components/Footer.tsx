@@ -1,5 +1,5 @@
 import React from 'react';
-import { Hammer, Phone, Mail, MapPin } from 'lucide-react';
+import { Hammer, Phone, Mail } from 'lucide-react';
 
 const Footer = () => {
   const scrollToSection = (href: string) => {
@@ -26,15 +26,11 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-orange-500" />
-                <span className="text-gray-300">(555) 123-4567</span>
+                <span className="text-gray-300">+918390248234</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-orange-500" />
-                <span className="text-gray-300">info@pavanhomedecor.com</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <MapPin className="h-4 w-4 text-orange-500" />
-                <span className="text-gray-300">123 Design Street, Decor City, DC 12345</span>
+                <span className="text-gray-300">pawanhomedecor@gmail.com</span>
               </div>
             </div>
           </div>
@@ -78,16 +74,9 @@ const Footer = () => {
             <p className="text-gray-400 text-sm">
               © {new Date().getFullYear()} Pavan Home Decor. All rights reserved.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors text-sm">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors text-sm">
-                Terms of Service
-              </a>
-              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors text-sm">
-                Licensing
-              </a>
+            <div className="text-gray-400 text-sm">
+              <p>Developed by: Bhoomit Rachchawar & Mrunal Biranwar</p>
+              <p>Managed by: Harshada Gaidhane</p>
             </div>
           </div>
         </div>

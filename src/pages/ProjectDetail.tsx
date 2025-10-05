@@ -1,6 +1,6 @@
-import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Calendar, MapPin, Users, CheckCircle, Award, Clock, DollarSign } from 'lucide-react';
+import { ArrowLeft, Calendar, MapPin, CheckCircle, Award, Clock, DollarSign } from 'lucide-react';
+import project1Image from '../assets/project1.jpg';
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -8,83 +8,312 @@ const ProjectDetail = () => {
   const projects = [
     {
       id: 1,
-      title: 'Modern Family Residence',
-      category: 'Residential',
-      location: 'Beverly Hills, CA',
-      completionDate: '2024',
-      clientType: 'Private Family',
-      duration: '8 months',
-      budget: '$2.5M',
-      image: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      title: 'Maruti Suzuki Showroom',
+      category: 'Commercial',
+      location: 'Koradi Panjra Police Station, Nagpur',
+      completionDate: 'In Progress',
+      clientType: 'Company',
+      duration: '-',
+      budget: '28 lakhs',
+      image: project1Image,
       gallery: [
-        'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+        project1Image,
         'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
         'https://images.pexels.com/photos/1571453/pexels-photo-1571453.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
       ],
-      description: 'A stunning 4,500 sq ft modern family home featuring open-concept living, sustainable materials, and smart home technology. This project represents the perfect blend of contemporary design and functional family living.',
-      challenge: 'The main challenge was integrating smart home technology throughout the house while maintaining the clean, minimalist aesthetic the clients desired. We also needed to ensure the open-concept design provided both communal spaces and private retreats.',
-      solution: 'We implemented a comprehensive smart home system with hidden wiring and discrete control panels. The open-concept design was balanced with strategic room divisions using glass partitions and varying ceiling heights to create distinct zones while maintaining visual flow.',
-      highlights: ['Smart Home Integration', 'Sustainable Materials', 'Open Concept Design', 'Energy Efficient', 'Custom Kitchen Island', 'Floor-to-Ceiling Windows'],
+      description: 'Electrical installation and maintenance for showroom with branded lighting, safety systems, and dedicated power zones.',
+      challenge: 'Executing electrical work for a high-footfall showroom required precision and brand compliance. Ensuring safe load distribution, optimal lighting, and uninterrupted power for display zones and service bays was critical. Coordinating with civil teams during active construction and planning for long-term maintenance added complexity to the execution phase.',
+      solution: 'A structured electrical layout was implemented with dedicated circuits for lighting, HVAC, and equipment zones. Branded lighting fixtures were installed for visibility and aesthetics. Safety protocols and surge protection were embedded. Ongoing maintenance includes routine checks, load balancing, and quick-response support to ensure uninterrupted operations and client satisfaction.',
+      highlights: ['Complete showroom electrical setup','Branded lighting installation','Load-balanced circuit design','Surge protection and safety compliance','Dedicated power zones for service and display','Routine electrical maintenance','Quick-response support system','Client-approved execution'],
       specifications: [
-        { label: 'Total Area', value: '4,500 sq ft' },
-        { label: 'Bedrooms', value: '4' },
-        { label: 'Bathrooms', value: '3.5' },
-        { label: 'Garage', value: '2-car attached' },
-        { label: 'Special Features', value: 'Smart home, Solar panels, Heated floors' }
+        { label: 'Total Area', value: '1 acre' },
+        { label: 'Special Features', value: 'Showroom Spotlights , Reception Lighting, Task Lights, Facade Lighting, Emergency Lights, Cafe area' }
       ]
     },
     {
       id: 2,
-      title: 'Downtown Office Complex',
-      category: 'Commercial',
-      location: 'Los Angeles, CA',
-      completionDate: '2023',
-      clientType: 'Corporate',
-      duration: '18 months',
-      budget: '$15M',
+      title: 'Modern Family Residential ',
+      category: ' Residential',
+      location: 'Pardi , Nagpur',
+      completionDate: '2025',
+      clientType: 'Private Family',
+      duration: '24 months',
+      budget: '4 cr',
       image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
       gallery: [
         'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
         'https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
         'https://images.pexels.com/photos/416320/pexels-photo-416320.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
       ],
-      description: 'A 12-story commercial office building with modern amenities, flexible workspaces, and LEED Gold certification. This project sets new standards for sustainable commercial construction in downtown Los Angeles.',
-      challenge: 'Building in a dense urban environment while achieving LEED Gold certification required careful planning for material sourcing, waste management, and energy efficiency. The tight construction schedule demanded precise coordination.',
-      solution: 'We implemented a comprehensive sustainability plan from day one, using locally sourced materials and advanced construction techniques. Our project management system ensured all trades worked in perfect coordination to meet the aggressive timeline.',
-      highlights: ['LEED Gold Certified', '12 Stories', 'Modern Amenities', 'Flexible Workspaces', 'Rooftop Garden', 'Underground Parking'],
+      description: 'Luxury 4BHK duplex with smart automation, lift, sensor kitchen, movie room, and artistic murals.',
+      challenge: 'Designing a luxury duplex within a 3,000 sq ft footprint required balancing smart features with aesthetic depth. Integrating a lift, sensor kitchen, and movie room without compromising flow and privacy was complex. Coordinating murals, lighting, and automation across levels demanded precision and seamless collaboration during construction.',
+      solution: 'The team delivered a refined duplex with zoned living and entertainment areas. Smart systems were embedded early, including sensor-based kitchen and automated lighting. A private lift and acoustically treated movie room enhanced comfort. Murals added character, while neutral tones and layered lighting ensured elegance across all spaces.',
+      highlights: ['Smart home integration Open-concept layout', 'Duplex layout with private lift', 'Smart home automation throughout', 'Sensor-based modular kitchen', 'Dedicated movie room with acoustic treatment', 'Custom murals for artistic flair', '4 spacious bedrooms with attached baths', '6 bathrooms with premium fittings', 'Open living-dining zone', 'Natural light optimization'],
       specifications: [
-        { label: 'Total Area', value: '250,000 sq ft' },
-        { label: 'Floors', value: '12 above ground, 2 below' },
-        { label: 'Parking Spaces', value: '200' },
-        { label: 'Elevators', value: '4 high-speed' },
-        { label: 'Special Features', value: 'LEED Gold, Rooftop garden, Fitness center' }
+        { label: 'Total Area', value: '23000 sf ft' },
+        { label: 'Bedroom', value: '4' },
+        { label: 'Bathroom', value: '6' },
+        { label: 'Special Features', value: 'smart home  , movie  room , sensor kitchen duplex , lift , murals' }
       ]
     },
     {
       id: 3,
-      title: 'Luxury Hotel Renovation',
-      category: 'Hospitality',
-      location: 'San Francisco, CA',
-      completionDate: '2024',
-      clientType: 'Hotel Chain',
-      duration: '12 months',
-      budget: '$8M',
+      title: 'Modern Family Residential ',
+      category: 'Residential',
+      location: 'Pipla fata , Nagpur',
+      completionDate: 'In progress',
+      clientType: 'Private Family',
+      duration: 'estimated  2026',
+      budget: 'est.  75 lakh',
       image: 'https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
       gallery: [
         'https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
         'https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
         'https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
       ],
-      description: 'Complete renovation of a historic 200-room luxury hotel, preserving architectural heritage while adding modern luxury amenities. This project required delicate balance between preservation and modernization.',
-      challenge: 'Working within a historic building meant navigating strict preservation guidelines while updating all systems to modern standards. The hotel needed to remain partially operational during construction.',
-      solution: 'We developed a phased construction approach that allowed the hotel to maintain 60% occupancy throughout the project. Our heritage specialists worked closely with preservation authorities to ensure all work met historical standards.',
-      highlights: ['Historic Preservation', '200 Rooms', 'Luxury Finishes', 'Heritage Architecture', 'Spa & Wellness Center', 'Rooftop Restaurant'],
+      description: 'Ongoing 3BHK smart home with modern layout, concealed wiring, and elegant elevation in Pipla Fata.',
+      challenge: 'The ongoing residential site faces challenges in integrating smart home features without disrupting minimalist aesthetics. Coordinating hidden wiring, spatial layout, and lighting design during active construction demands precision. Balancing client expectations with evolving site conditions and ensuring seamless collaboration between design and technical teams remains a continuous effort',
+      solution: 'The team is implementing smart systems early, embedding concealed wiring and centralized controls. Open layouts, glass partitions, and varied ceiling heights enhance flow. Lighting is layered with recessed fixtures and smart dimmers. Regular site reviews, client updates, and adaptive planning ensure the evolving design remains aligned with both function and elegance.',
+      highlights: ['Interior ', 'Construction', 'Best elevation '],
       specifications: [
-        { label: 'Rooms', value: '200 luxury suites' },
-        { label: 'Built', value: '1925 (renovated 2024)' },
-        { label: 'Floors', value: '8' },
-        { label: 'Dining', value: '3 restaurants, 2 bars' },
-        { label: 'Special Features', value: 'Historic lobby, Spa, Rooftop dining, Valet parking' }
+       { label: 'Total Area', value: '1500 sf ft' },
+        { label: 'Bedroom', value: '3' },
+        { label: 'Bathroom', value: '4' },
+        { label: 'Special Features', value: 'smart home  , modern home ' }
+      ]
+    },
+    {
+      id: 4,
+      title: 'Modern Family Residential ',
+      category: 'Commercial & Residential',
+      location: 'Pipla fata , Nagpur',
+      completionDate: '2025',
+      clientType: 'Private Family',
+      duration: '12 month',
+      budget: 'est.  85 lakh',
+      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      gallery: [
+        'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+        'https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+        'https://images.pexels.com/photos/416320/pexels-photo-416320.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
+      ],
+      description: 'Dual-purpose smart home with clinic below, acoustic zoning, epoxy finishes, and modern elevation design',
+      challenge: 'Designing a dual-purpose site with a medical clinic below and a family residence above requires balancing privacy, noise control, and functional zoning. Structural planning must accommodate both clinical efficiency and homely comfort. Ensuring separate access, ventilation, and safety standards for each level adds complexity during active construction.',
+      solution: 'The layout separates medical and residential zones with distinct entries and acoustic insulation. Structural elements are reinforced to support both uses. Smart zoning ensures privacy and compliance. Residential design incorporates natural light and soundproofing, while the clinic is optimized for flow and hygiene. Coordination across teams ensures seamless execution.',
+      highlights: ['Interior ', 'Construction', 'Best elevation','Commerical '],
+      specifications: [
+        { label: 'Total Area', value: '2500 sf ft' },
+        { label: 'Bedroom', value: '3' },
+        { label: 'Bathroom', value: '5' },
+        { label: 'Special Features', value: 'smart home  , modern home, epoxy tiles ',}
+      ]
+    },
+    {
+      id: 5,
+      title: 'Modern Family Residential ',
+      category: ' Residential',
+      location: 'Shankarpur , Nagpur',
+      completionDate: '2023',
+      clientType: 'Private Family',
+      duration: '8 months',
+      budget: '60 lakh',
+      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      gallery: [
+        'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+        'https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+        'https://images.pexels.com/photos/416320/pexels-photo-416320.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
+      ],
+      description: 'Minimalist 3BHK smart home with hidden wiring, glass partitions, and modern spatial flow in Shankarpur.',
+      challenge: 'DThe project aimed to integrate smart home technology into a residential space while preserving a clean, minimalist aesthetic. The difficulty lay in balancing advanced functionality with visual simplicity',
+      solution: 'The team implemented a comprehensive smart home system featuring: 1. Hidden wiring and discrete control panels to maintain visual clarity., An open-concept layout using glass partitions and varying ceiling heights to enhance spatial flow and modern appeal.',
+      highlights: ['Interior ', 'Construction', 'Best elevation'],
+      specifications: [
+        { label: 'Total Area', value: '1200 sf ft' },
+        { label: 'Bedroom', value: '3' },
+        { label: 'Bathroom', value: '3' },
+        { label: 'Special Features', value: 'smart home' }
+      ]
+    },
+    {
+      id: 6,
+      title: 'Modern  Family Residential ',
+      category: ' Residential',
+      location: 'Washim',
+      completionDate: '2025',
+      clientType: 'Private Family',
+      duration: '24 months',
+      budget: '2 cr',
+      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      gallery: [
+        'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+        'https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+        'https://images.pexels.com/photos/416320/pexels-photo-416320.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
+      ],
+      description: 'Elegant 4BHK smart home with acoustic zoning, modern interiors, and best elevation design in Washim.',
+      challenge: 'During construction, aligning structural elements with interior design goals was a key challenge. Integrating smart systems, managing vendor timelines, and preserving design intent under budget constraints required constant coordination. Achieving seamless finishes, optimal lighting, and functional zoning demanded precision across civil, electrical, and interior teams throughout the build.',
+      solution: 'The team delivered a cohesive space by synchronizing design with execution. Smart features were discreetly embedded, and finishes were customized to enhance flow and aesthetics. Lighting, furniture, and materials were selected for durability and elegance. Regular site reviews ensured quality control, resulting in a polished, functional, and client-approved interior.',
+      highlights: ['Smart home integration Open-concept layout', 'Natural light optimization', 'Minimalist aesthetic', 'Custom furniture and storage', 'Energy-efficient appliances', 'Acoustic zoning for privacy','Elegant lighting design'],
+      specifications: [
+        { label: 'Total Area', value: '2400 sf ft' },
+        { label: 'Bedroom', value: '4' },
+        { label: 'Bathroom', value: '5' },
+        { label: 'Special Features', value: 'smart home, modern home, best elevation' }
+      ]
+    },
+    {
+      id: 7,
+      title: 'Modern  Family Residential ',
+      category: ' Residential',
+      location: 'Washim',
+      completionDate: '2025',
+      clientType: 'Private Family',
+      duration: '24 months',
+      budget: '2 cr',
+      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      gallery: [
+        'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+        'https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+        'https://images.pexels.com/photos/416320/pexels-photo-416320.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
+      ],
+      description: 'Elegant 4BHK smart home with acoustic zoning, modern interiors, and best elevation design in Washim.',
+      challenge: 'During construction, aligning structural elements with interior design goals was a key challenge. Integrating smart systems, managing vendor timelines, and preserving design intent under budget constraints required constant coordination. Achieving seamless finishes, optimal lighting, and functional zoning demanded precision across civil, electrical, and interior teams throughout the build.',
+      solution: 'The team delivered a cohesive space by synchronizing design with execution. Smart features were discreetly embedded, and finishes were customized to enhance flow and aesthetics. Lighting, furniture, and materials were selected for durability and elegance. Regular site reviews ensured quality control, resulting in a polished, functional, and client-approved interior.',
+      highlights: ['Smart home integration Open-concept layout', 'Natural light optimization', 'Minimalist aesthetic', 'Custom furniture and storage', 'Energy-efficient appliances', 'Acoustic zoning for privacy','Elegant lighting design'],
+      specifications: [
+        { label: 'Total Area', value: '2400 sf ft' },
+        { label: 'Bedroom', value: '4' },
+        { label: 'Bathroom', value: '5' },
+        { label: 'Special Features', value: 'smart home, modern home, best elevation' }
+      ]
+    },
+    {
+      id: 8,
+      title: 'Modern  Family Residential ',
+      category: ' Residential',
+      location: 'Yavatmal',
+      completionDate: '2022',
+      clientType: 'Private Family',
+      duration: '8 months',
+      budget: '45 lakh',
+      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      gallery: [
+        'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+        'https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+        'https://images.pexels.com/photos/416320/pexels-photo-416320.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
+      ],
+      description: 'Smart 2BHK home with open layout, modular kitchen, and budget-friendly finishes in Yavatmal.',
+      challenge: 'Designing within a ₹45 lakh budget required balancing aesthetics, functionality, and durability. Space constraints limited layout options, and material selection had to meet both cost and quality standards. Ensuring natural light, ventilation, and privacy in a compact footprint demanded thoughtful planning and efficient use of every square foot.',
+      solution: 'The team optimized layout with open-plan design and multifunctional furniture. Locally sourced materials ensured quality within budget. Neutral tones and smart lighting enhanced spaciousness. Strategic window placement improved ventilation and light. Every element—from flooring to fixtures—was chosen for longevity, simplicity, and comfort, delivering a refined yet affordable living space',
+      highlights: ['2BHK compact layout', 'Open living-dining zone', 'Modular kitchen setup', 'Budget-friendly materials', 'Low-maintenance finishes', 'Functional storage solutions'],
+      specifications: [
+        { label: 'Total Area', value: '1250 sf ft' },
+        { label: 'Bedroom', value: '2' },
+        { label: 'Bathroom', value: '3' },
+        { label: 'Special Features', value: 'smart home' }
+      ]
+    },
+    {
+      id: 9,
+      title: 'Modern  Family Residential ',
+      category: ' Residential',
+      location: 'Yavatmal ',
+      completionDate: '2023',
+      clientType: 'Private Family',
+      duration: '18 months',
+      budget: '1 cr',
+      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      gallery: [
+        'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+        'https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+        'https://images.pexels.com/photos/416320/pexels-photo-416320.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
+      ],
+      description: 'Modern 3BHK duplex with smart features, solar panels, and spacious layout in Yavatmal.',
+      challenge: 'Balancing spacious design with budget constraints was key. The challenge lay in optimizing 2,200 sq ft without overcomplicating finishes or layouts. Integrating smart features, ensuring natural light, and maintaining privacy across zones required thoughtful planning. Coordinating vendors and managing material quality .',
+      solution: 'The team delivered a clean, functional layout with open zones and defined private areas. Smart switches, modular furniture, and ambient lighting enhanced usability. Locally sourced materials ensured quality and cost control. Neutral tones, large windows, and minimal partitions created a spacious feel. Timely execution ensured client satisfaction and design integrity.',
+      highlights: ['3BHK layout with open living-dining', '2,200 sq ft built-up area', 'Modular kitchen and wardrobes', 'Smart lighting and switches', 'Ample natural light and ventilation', 'Neutral color palette','Separate utility and storage zones','Budget-aligned execution','Client-approved final delivery'],
+      specifications: [
+        { label: 'Total Area', value: '2200 sf ft' },
+        { label: 'Bedroom', value: '3' },
+        { label: 'Bathroom', value: '4' },
+        { label: 'Special Features', value: 'smart home, duplex, solar panels' }
+      ]
+    },
+    {
+      id: 10,
+      title: 'Modern  Family Residential ',
+      category: ' Residential',
+      location: 'Yavatmal',
+      completionDate: '2021',
+      clientType: 'Private Family',
+      duration: '10 months',
+      budget: '60 lakh',
+      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      gallery: [
+        'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+        'https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+        'https://images.pexels.com/photos/416320/pexels-photo-416320.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
+      ],
+      description: 'Compact 2BHK home with smart interiors, modular kitchen, and natural light in Yavatmal.',
+      challenge: 'Designing a compact home within budget required smart space planning and material selection. Limited area posed challenges for storage, lighting, and ventilation. Balancing simplicity with comfort, while ensuring durability and aesthetic appeal, demanded thoughtful execution and coordination across vendors.',
+      solution: 'TThe layout maximized space with open zones and multifunctional furniture. Neutral tones and natural light enhanced openness. Locally sourced materials ensured cost-efficiency. Smart switches and modular storage added functionality. The result is a cozy, low-maintenance home tailored for everyday living.',
+      highlights: ['2BHK layout', 'Open living-dining zone', 'Modular kitchen', 'Natural light optimization', 'Smart switches', 'Budget-friendly finishes','Functional storage'],
+      specifications: [
+        { label: 'Total Area', value: '1500 sf ft' },
+        { label: 'Bedroom', value: '2' },
+        { label: 'Bathroom', value: '3' },
+        { label: 'Special Features', value: 'interior' }
+      ]
+    },
+    {
+      id: 11,
+      title: 'Modern  Family Residential ',
+      category: ' Residential',
+      location: 'Yavatmal ',
+      completionDate: '2022',
+      clientType: 'Private Family',
+      duration: '24 months',
+      budget: '1.5 cr',
+      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      gallery: [
+        'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+        'https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+        'https://images.pexels.com/photos/416320/pexels-photo-416320.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
+      ],
+      description: 'Spacious 4BHK duplex bungalow with smart features, solar panels, and elegant interiors in Yavatmal.',
+      challenge: 'Designing a 2,500 sq ft residence required balancing spaciousness with functionality. The challenge was to create fluid zones for living, dining, and bedrooms while integrating smart features discreetly. Managing lighting, ventilation, and privacy across a large footprint demanded precise planning, especially while coordinating civil and interior teams during execution.',
+      solution: 'The layout was optimized with open-concept living and dining areas, zoned bedrooms, and smart storage. Ambient lighting, large windows, and neutral tones enhanced openness. Smart switches and modular furniture added convenience. Material selection focused on durability and elegance. Timely walkthroughs ensured alignment with client expectations and seamless design delivery.',
+      highlights: ['2,500 sq ft built-up area', '4BHK layout with spacious living-dining zone', 'Modular kitchen with utility', 'Smart switches and ambient lighting', 'Vitrified tile flooring and matte finishes', 'Large windows for natural light','Custom wardrobes and storage units','●	Neutral color palette with minimalist styling','Separate pooja and study zones','Client-approved final execution'],
+      specifications: [
+        { label: 'Total Area', value: '2500 sf ft' },
+        { label: 'Bedroom', value: '4' },
+        { label: 'Bathroom', value: '5' },
+        { label: 'Special Features', value: 'smart home, duplex , solar panels , bungalow' }
+      ]
+    },
+    {
+      id: 12,
+      title: 'Modern  Family Residential ',
+      category: ' Residential',
+      location: 'Yavatmal',
+      completionDate: '2022',
+      clientType: 'Private Family',
+      duration: '8 months',
+      budget: '45 lakh',
+      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      gallery: [
+        'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+        'https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+        'https://images.pexels.com/photos/416320/pexels-photo-416320.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
+      ],
+      description: 'Smart 2BHK home with open layout, modular kitchen, and budget-friendly finishes in Yavatmal.',
+      challenge: 'Designing within a ₹45 lakh budget required balancing aesthetics, functionality, and durability. Space constraints limited layout options, and material selection had to meet both cost and quality standards. Ensuring natural light, ventilation, and privacy in a compact footprint demanded thoughtful planning and efficient use of every square foot.',
+      solution: 'The team optimized layout with open-plan design and multifunctional furniture. Locally sourced materials ensured quality within budget. Neutral tones and smart lighting enhanced spaciousness. Strategic window placement improved ventilation and light. Every element—from flooring to fixtures—was chosen for longevity, simplicity, and comfort, delivering a refined yet affordable living space',
+      highlights: ['2BHK compact layout', 'Open living-dining zone', 'Modular kitchen setup', 'Budget-friendly materials', 'Low-maintenance finishes', 'Functional storage solutions'],
+      specifications: [
+        { label: 'Total Area', value: '1250 sf ft' },
+        { label: 'Bedroom', value: '2' },
+        { label: 'Bathroom', value: '3' },
+        { label: 'Special Features', value: 'smart home' }
       ]
     }
   ];

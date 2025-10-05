@@ -8,25 +8,25 @@ const AllProjects = () => {
   const projects = [
     {
       id: 1,
-      title: 'Modern Family Residence',
-      category: 'Residential',
-      location: 'Beverly Hills, CA',
-      completionDate: '2024',
-      clientType: 'Private Family',
+      title: 'Maruti Suzuki Showroom',
+      category: 'Commercial',
+      location: 'Koradi Panjra Police Station, Nagpur',
+      completionDate: 'In Progress',
+      clientType: 'Company',
       image: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-      description: 'A stunning 4,500 sq ft modern family home featuring open-concept living, sustainable materials, and smart home technology.',
-      highlights: ['Smart Home Integration', 'Sustainable Materials', 'Open Concept Design', 'Energy Efficient']
+      description: 'Electrical installation and maintenance for showroom with branded lighting, safety systems, and dedicated power zones.',
+      highlights: ['Electrical Setup', 'Load-balanced circuit']
     },
     {
       id: 2,
-      title: 'Downtown Office Complex',
-      category: 'Commercial',
-      location: 'Los Angeles, CA',
-      completionDate: '2023',
-      clientType: 'Corporate',
+      title: 'Modern  Family Residential ',
+      category: ' Residential',
+      location: 'Washim',
+      completionDate: '2025',
+      clientType: 'Private Family',
       image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-      description: 'A 12-story commercial office building with modern amenities, flexible workspaces, and LEED Gold certification.',
-      highlights: ['LEED Gold Certified', '12 Stories', 'Modern Amenities', 'Flexible Workspaces']
+      description: 'Elegant 4BHK smart home with acoustic zoning, modern interiors, and best elevation design in Washim.',
+      highlights: ['Smart home integration Open-concept layout', 'Natural light optimization', 'Minimalist aesthetic', 'Custom furniture and storage', 'Energy-efficient appliances', 'Acoustic zoning for privacy','Elegant lighting design']
     },
     {
       id: 3,
@@ -71,6 +71,83 @@ const AllProjects = () => {
       image: 'https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
       description: 'A state-of-the-art medical facility expansion with advanced surgical suites and patient care areas.',
       highlights: ['Advanced Surgical Suites', 'Patient Care Focus', 'Medical Equipment Integration', 'Healing Environment']
+    },
+    {
+      id: 2,
+      title: 'Modern  Family Residential ',
+      category: ' Residential',
+      location: 'Washim',
+      completionDate: '2025',
+      clientType: 'Private Family',
+      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+      description: 'Elegant 4BHK smart home with acoustic zoning, modern interiors, and best elevation design in Washim.',
+      highlights: ['Smart home integration Open-concept layout', 'Natural light optimization', 'Minimalist aesthetic', 'Custom furniture and storage', 'Energy-efficient appliances', 'Acoustic zoning for privacy','Elegant lighting design']
+    },
+    {
+      id: 2,
+      title: 'Modern  Family Residential ',
+      category: ' Residential',
+      location: 'Washim',
+      completionDate: '2025',
+      clientType: 'Private Family',
+      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+      description: 'Elegant 4BHK smart home with acoustic zoning, modern interiors, and best elevation design in Washim.',
+      highlights: ['Smart home integration Open-concept layout', 'Natural light optimization', 'Minimalist aesthetic', 'Custom furniture and storage', 'Energy-efficient appliances', 'Acoustic zoning for privacy','Elegant lighting design']
+    },
+    {
+      id: 2,
+      title: 'Modern  Family Residential ',
+      category: ' Residential',
+      location: 'Washim',
+      completionDate: '2025',
+      clientType: 'Private Family',
+      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+      description: 'Elegant 4BHK smart home with acoustic zoning, modern interiors, and best elevation design in Washim.',
+      highlights: ['Smart home integration Open-concept layout', 'Natural light optimization', 'Minimalist aesthetic', 'Custom furniture and storage', 'Energy-efficient appliances', 'Acoustic zoning for privacy','Elegant lighting design']
+    },
+    {
+      id: 2,
+      title: 'Modern  Family Residential ',
+      category: ' Residential',
+      location: 'Washim',
+      completionDate: '2025',
+      clientType: 'Private Family',
+      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+      description: 'Elegant 4BHK smart home with acoustic zoning, modern interiors, and best elevation design in Washim.',
+      highlights: ['Smart home integration Open-concept layout', 'Natural light optimization', 'Minimalist aesthetic', 'Custom furniture and storage', 'Energy-efficient appliances', 'Acoustic zoning for privacy','Elegant lighting design']
+    },
+    {
+      id: 2,
+      title: 'Modern  Family Residential ',
+      category: ' Residential',
+      location: 'Washim',
+      completionDate: '2025',
+      clientType: 'Private Family',
+      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+      description: 'Elegant 4BHK smart home with acoustic zoning, modern interiors, and best elevation design in Washim.',
+      highlights: ['Smart home integration Open-concept layout', 'Natural light optimization', 'Minimalist aesthetic', 'Custom furniture and storage', 'Energy-efficient appliances', 'Acoustic zoning for privacy','Elegant lighting design']
+    },
+    {
+      id: 2,
+      title: 'Modern  Family Residential ',
+      category: ' Residential',
+      location: 'Washim',
+      completionDate: '2025',
+      clientType: 'Private Family',
+      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+      description: 'Elegant 4BHK smart home with acoustic zoning, modern interiors, and best elevation design in Washim.',
+      highlights: ['Smart home integration Open-concept layout', 'Natural light optimization', 'Minimalist aesthetic', 'Custom furniture and storage', 'Energy-efficient appliances', 'Acoustic zoning for privacy','Elegant lighting design']
+    },
+    {
+      id: 2,
+      title: 'Modern  Family Residential ',
+      category: ' Residential',
+      location: 'Washim',
+      completionDate: '2025',
+      clientType: 'Private Family',
+      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+      description: 'Elegant 4BHK smart home with acoustic zoning, modern interiors, and best elevation design in Washim.',
+      highlights: ['Smart home integration Open-concept layout', 'Natural light optimization', 'Minimalist aesthetic', 'Custom furniture and storage', 'Energy-efficient appliances', 'Acoustic zoning for privacy','Elegant lighting design']
     }
   ];
 

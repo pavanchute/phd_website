@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Menu, X, Hammer } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import logo from '../assets/logo.svg';
+import blueLogo from '../assets/blue_logo.svg';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -44,7 +46,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center space-x-2">
-            <Hammer className={`h-8 w-8 ${isScrolled || !isHomePage ? 'text-blue-700' : 'text-white'}`} />
+            <img src={isScrolled || !isHomePage ? blueLogo : logo} alt="Pavan Home Decor" className="h-20 w-20" />
             <span className={`text-2xl font-bold ${isScrolled || !isHomePage ? 'text-blue-700' : 'text-white'}`}>
               Pavan Home Decor
             </span>

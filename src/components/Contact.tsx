@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
+import { Phone, Mail, Send, Youtube, Instagram, User } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -26,28 +26,33 @@ const Contact = () => {
 
   const contactInfo = [
     {
+      icon: User,
+      title: 'Name',
+      details: ['Pavan Chute'],
+      action: null
+    },
+    {
       icon: Phone,
       title: 'Call Us',
-      details: ['(555) 123-4567', '(555) 765-4321'],
-      action: 'tel:+15551234567'
+      details: ['+918390248234'],
+      action: 'tel:+918390248234'
     },
     {
       icon: Mail,
       title: 'Email Us',
-      details: ['info@buildcraft.com', 'quotes@buildcraft.com'],
-      action: 'mailto:info@buildcraft.com'
+      details: ['pawanhomedecor@gmail.com'],
+      action: 'mailto:pawanhomedecor@gmail.com'
+    }
+  ];
+
+  const socials = [
+    {
+      icon: Youtube,
+      href: 'https://www.youtube.com/@purushottamchute5219',
     },
     {
-      icon: MapPin,
-      title: 'Visit Us',
-      details: ['123 Construction Ave', 'Building City, BC 12345'],
-      action: 'https://maps.google.com'
-    },
-    {
-      icon: Clock,
-      title: 'Business Hours',
-      details: ['Mon-Fri: 7:00 AM - 6:00 PM', 'Sat: 8:00 AM - 4:00 PM', 'Sun: Emergency Only'],
-      action: null
+      icon: Instagram,
+      href: 'https://www.instagram.com/pavan_home_decor/',
     }
   ];
 
@@ -94,21 +99,18 @@ const Contact = () => {
               })}
             </div>
 
-            <div className="mt-8 p-6 bg-blue-800 rounded-lg">
-              <h4 className="text-lg font-semibold text-white mb-3">24/7 Design Consultation</h4>
-              <p className="text-gray-200 mb-4">
-                We provide round-the-clock design consultation services for your home decor needs.
-              </p>
-              <a 
-                href="tel:+15551234567" 
-                className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors inline-flex items-center"
-              >
-                <Phone className="h-4 w-4 mr-2" />
-                Design Hotline
-              </a>
-              <p className="text-gray-200 mt-4">
-                Ready to start your next home decor project? Contact us today for a free consultation and quote.
-              </p>
+            <div className="mt-8">
+              <h4 className="text-lg font-semibold text-white mb-4">Follow Us</h4>
+              <div className="flex items-center space-x-4">
+                {socials.map((social, index) => {
+                  const Icon = social.icon;
+                  return (
+                    <a key={index} href={social.href} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
+                      <Icon className="h-8 w-8" />
+                    </a>
+                  )
+                })}
+              </div>
             </div>
           </div>
 
