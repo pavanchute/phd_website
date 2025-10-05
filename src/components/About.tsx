@@ -1,5 +1,7 @@
 import React from 'react';
-import { CheckCircle, Star, Users } from 'lucide-react';
+import { CheckCircle, Paintbrush, Box, Sofa, Building, Home, Zap, Factory, Wrench, Hammer } from 'lucide-react';
+import pavanImage from '../assets/Pavan_founder.jpg';
+import chetanImage from '../assets/Chetan_Co-Founder.jpg';
 
 const About = () => {
   const achievements = [
@@ -11,24 +13,41 @@ const About = () => {
     '24/7 emergency response services'
   ];
 
-  const testimonials = [
+  const teamMembers = [
     {
-      name: 'Sarah Johnson',
-      role: 'Homeowner',
-      content: 'BuildCraft transformed our vision into reality. Their attention to detail and professionalism exceeded our expectations.',
-      rating: 5
+      name: 'Pavan Chute',
+      role: 'Founder',
+      title: 'Creative Visionary at Pavan Home Decor',
+      image: pavanImage,
+      expertise: [
+        { icon: Paintbrush, text: 'Painting & POP Work', desc: 'Artistic wall finishes and precision POP designs that enhance interiors with texture and elegance.' },
+        { icon: Box, text: '3D Home Visualizations', desc: 'Realistic digital previews that help clients visualize their dream spaces before execution.' },
+        { icon: Sofa, text: 'Interior Styling & Custom Furniture', desc: 'Bespoke furniture and decor solutions that blend comfort, style, and functionality.' },
+        { icon: Building, text: 'Residential & Commercial Construction', desc: 'End-to-end construction services—from foundation to finishing—delivered with structural integrity and aesthetic finesse.' },
+        { icon: Home, text: 'Turnkey Project Execution', desc: 'Seamless coordination of design, labor, and materials to deliver ready-to-move-in spaces.' }
+      ]
     },
     {
-      name: 'Mike Chen',
-      role: 'Business Owner',
-      content: 'Outstanding work on our commercial project. Delivered on time and within budget with exceptional quality.',
-      rating: 5
+      name: 'Chetan Devdhare',
+      role: 'Co-Founder',
+      title: 'Electrical Design & Execution Specialist',
+      image: chetanImage,
+      expertise: [
+        { icon: Home, text: 'Residential Electrical Systems', desc: 'Skilled in designing and implementing safe, efficient wiring layouts, lighting plans, and energy-saving solutions for homes.' },
+        { icon: Building, text: 'Commercial Electrical Design', desc: 'Expertise in structured cabling, load balancing, and scalable electrical setups for offices, showrooms, and retail spaces.' },
+        { icon: Factory, text: 'Industrial Electrical Engineering', desc: 'Proficient in high-voltage systems, control panel design, automation integration, and industrial-grade safety compliance.' },
+        { icon: Box, text: 'Electrical Design & Planning', desc: 'Precision in circuit diagrams, load calculations, and blueprint-based execution for new constructions and renovations.' },
+        { icon: Wrench, text: 'Maintenance & Troubleshooting', desc: 'Quick diagnosis and resolution of electrical faults, system upgrades, and preventive maintenance for all sectors.' }
+      ]
     },
     {
-      name: 'Emily Rodriguez',
-      role: 'Property Manager',
-      content: 'Reliable, professional, and skilled. BuildCraft has been our go-to contractor for all maintenance and renovation needs.',
-      rating: 5
+      name: 'Mahesh Chaure',
+      role: 'Civil Contractor',
+      title: 'Construction & Civil Engineering Expert',
+      image: null,
+      expertise: [
+        { icon: Hammer, text: 'Civil Construction', desc: 'Expert in structural construction and civil engineering projects.' }
+      ]
     }
   ];
 
@@ -39,16 +58,16 @@ const About = () => {
           <div>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">About Pavan Home Decor</h2>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Founded in 2008, Pavan Home Decor has established itself as a premier construction company 
-              in the region. We combine traditional craftsmanship with modern techniques to deliver 
+              Founded in 2008, Pavan Home Decor has established itself as a premier construction company
+              in the region. We combine traditional craftsmanship with modern techniques to deliver
               exceptional results for every project.
             </p>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Our team of skilled professionals is dedicated to bringing your vision to life while 
-              maintaining the highest standards of quality, safety, and customer service. We believe 
+              Our team of skilled professionals is dedicated to bringing your vision to life while
+              maintaining the highest standards of quality, safety, and customer service. We believe
               that every project, regardless of size, deserves our complete attention and expertise.
             </p>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {achievements.map((achievement, index) => (
                 <div key={index} className="flex items-center space-x-3">
@@ -58,9 +77,9 @@ const About = () => {
               ))}
             </div>
           </div>
-          
+
           <div className="relative">
-            <img 
+            <img
               src="https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
               alt="Construction team at work"
               className="rounded-lg shadow-xl"
@@ -72,28 +91,48 @@ const About = () => {
           </div>
         </div>
 
-        <div className="bg-gray-50 rounded-2xl p-8 md:p-12">
+        <div className="mb-20">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">What Our Clients Say</h3>
-            <p className="text-lg text-gray-600">Don't just take our word for it - hear from our satisfied customers</p>
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">Meet Our Team</h3>
+            <p className="text-lg text-gray-600">Expert professionals dedicated to bringing your vision to life</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 shadow-md">
-                <div className="flex items-center mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-600 mb-4 italic">"{testimonial.content}"</p>
-                <div className="flex items-center">
-                  <div className="bg-blue-100 p-2 rounded-full mr-3">
-                    <Users className="h-4 w-4 text-blue-700" />
+          <div className="space-y-16">
+            {teamMembers.map((member, index) => (
+              <div key={index} className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg overflow-hidden">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-8 md:p-12">
+                  <div className="lg:col-span-1 flex flex-col items-center text-center">
+                    {member.image ? (
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-48 h-48 rounded-full object-cover shadow-lg mb-6"
+                      />
+                    ) : (
+                      <div className="w-48 h-48 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-lg mb-6">
+                        <span className="text-5xl font-bold text-white">{member.name.charAt(0)}</span>
+                      </div>
+                    )}
+                    <h4 className="text-2xl font-bold text-gray-900 mb-2">{member.name}</h4>
+                    <p className="text-orange-600 font-semibold mb-2">{member.role}</p>
+                    <p className="text-gray-600 text-sm">{member.title}</p>
                   </div>
-                  <div>
-                    <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                    <div className="text-sm text-gray-600">{testimonial.role}</div>
+
+                  <div className="lg:col-span-2">
+                    <h5 className="text-xl font-bold text-gray-900 mb-6">Areas of Expertise</h5>
+                    <div className="space-y-4">
+                      {member.expertise.map((skill, skillIndex) => (
+                        <div key={skillIndex} className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                          <div className="bg-orange-100 p-3 rounded-lg flex-shrink-0">
+                            <skill.icon className="h-6 w-6 text-orange-600" />
+                          </div>
+                          <div>
+                            <h6 className="font-semibold text-gray-900 mb-1">{skill.text}</h6>
+                            <p className="text-gray-600 text-sm leading-relaxed">{skill.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
