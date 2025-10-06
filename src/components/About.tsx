@@ -2,6 +2,7 @@ import { Paintbrush, Box, Sofa, Building, Home, Factory, Wrench, Hammer, Eye, Ta
 import pavanImage from '../assets/Pavan_founder.jpg';
 import chetanImage from '../assets/Chetan_Co-Founder.jpg';
 import aboutImage from '../assets/about.jpg';
+import chauhreImage from '../assets/Mr_Chauhre.jpg';
 
 const About = () => {
   const visionMissionGoals = [
@@ -60,7 +61,7 @@ const About = () => {
       name: 'Mahesh Chaure',
       role: 'Civil Contractor',
       title: 'Construction & Civil Engineering Expert',
-      image: null,
+      image: chauhreImage,
       expertise: [
         { icon: Hammer, text: 'Civil Construction', desc: 'Expert in structural construction and civil engineering projects.' }
       ]

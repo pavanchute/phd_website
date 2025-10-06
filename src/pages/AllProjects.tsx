@@ -16,7 +16,7 @@ const AllProjects = () => {
     highlights: string[];
   };
 
-  const projects: Project[] = [
+  const projects: Project[] = useMemo(() => [
     {
       id: 1,
       title: 'Maruti Suzuki Showroom',
@@ -29,13 +29,13 @@ const AllProjects = () => {
     },
     {
       id: 2,
-      title: 'Modern  Family Residential ',
+      title: 'Modern Family Residential ',
       category: ' Residential',
-      location: 'Washim',
+      location: 'Pardi , Nagpur',
       completionDate: '2025',
       clientType: 'Private Family',
-      description: 'Elegant 4BHK smart home with acoustic zoning, modern interiors, and best elevation design in Washim.',
-      highlights: ['Smart home integration Open-concept layout', 'Natural light optimization', 'Minimalist aesthetic', 'Custom furniture and storage', 'Energy-efficient appliances', 'Acoustic zoning for privacy','Elegant lighting design']
+      description: 'Luxury 4BHK duplex with smart automation, lift, sensor kitchen, movie room, and artistic murals.',
+      highlights: ['Smart home integration Open-concept layout', 'Duplex layout with private lift']
     },
     {
       id: 3,
@@ -126,28 +126,8 @@ const AllProjects = () => {
       clientType: 'Private Family',
       description: 'Spacious 4BHK duplex bungalow with smart features, solar panels, and elegant interiors in Yavatmal.',
       highlights: ['2,500 sq ft built-up area', '4BHK layout with spacious living-dining zone']
-    },
-    {
-      id: 10,
-      title: 'Modern  Family Residential ',
-      category: ' Residential',
-      location: 'Yavatmal',
-      completionDate: '2021',
-      clientType: 'Private Family',
-      description: 'Compact 2BHK home with smart interiors, modular kitchen, and natural light in Yavatmal.',
-      highlights: ['2BHK layout', 'Open living-dining zone']
-    },
-    {
-      id: 12,
-      title: 'Modern  Family Residential ',
-      category: ' Residential',
-      location: 'Yavatmal',
-      completionDate: '2022',
-      clientType: 'Private Family',
-      description: 'Smart 2BHK home with open layout, modular kitchen, and budget-friendly finishes in Yavatmal.',
-      highlights: ['2BHK compact layout', 'Open living-dining zone']
     }
-  ];
+  ], []);
 
   // Build categories from data
   const categories = useMemo(() => {

@@ -45,7 +45,7 @@ const Hero = () => {
             <div className="flex items-center space-x-3">
               <Award className="h-8 w-8 text-orange-500" />
               <div>
-                <div className="text-2xl font-bold">10+</div>
+                <div className="text-2xl font-bold">50+</div>
                 <div className="text-gray-200">Projects Completed</div>
               </div>
             </div>

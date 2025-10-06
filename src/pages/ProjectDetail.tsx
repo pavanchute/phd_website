@@ -58,13 +58,9 @@ const ProjectDetail = () => {
       clientType: 'Private Family',
       duration: '24 months',
       budget: '4 cr',
-      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      image: '',
       // Replace the placeholder image URLs below with your actual images
-      gallery: [
-        'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        'https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        'https://images.pexels.com/photos/416320/pexels-photo-416320.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
-      ],
+      gallery: [],
       // Add your video URLs (mp4 links or YouTube share links)
       videos: [
         // 'https://your-cdn.com/video1.mp4',
@@ -90,11 +86,8 @@ const ProjectDetail = () => {
       clientType: 'Private Family',
       duration: 'estimated  2026',
       budget: 'est.  75 lakh',
-      image: 'https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      image: '',
       gallery: [
-        'https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        'https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        'https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
       ],
       description: 'Ongoing 3BHK smart home with modern layout, concealed wiring, and elegant elevation in Pipla Fata.',
       challenge: 'The ongoing residential site faces challenges in integrating smart home features without disrupting minimalist aesthetics. Coordinating hidden wiring, spatial layout, and lighting design during active construction demands precision. Balancing client expectations with evolving site conditions and ensuring seamless collaboration between design and technical teams remains a continuous effort',
@@ -116,11 +109,9 @@ const ProjectDetail = () => {
       clientType: 'Private Family',
       duration: '12 month',
       budget: 'est.  85 lakh',
-      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      image: '',
       gallery: [
-        'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        'https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        'https://images.pexels.com/photos/416320/pexels-photo-416320.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
+
       ],
       description: 'Dual-purpose smart home with clinic below, acoustic zoning, epoxy finishes, and modern elevation design',
       challenge: 'Designing a dual-purpose site with a medical clinic below and a family residence above requires balancing privacy, noise control, and functional zoning. Structural planning must accommodate both clinical efficiency and homely comfort. Ensuring separate access, ventilation, and safety standards for each level adds complexity during active construction.',
@@ -142,11 +133,9 @@ const ProjectDetail = () => {
       clientType: 'Private Family',
       duration: '8 months',
       budget: '60 lakh',
-      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      image: '',
       gallery: [
-        'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        'https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        'https://images.pexels.com/photos/416320/pexels-photo-416320.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
+
       ],
       description: 'Minimalist 3BHK smart home with hidden wiring, glass partitions, and modern spatial flow in Shankarpur.',
       challenge: 'DThe project aimed to integrate smart home technology into a residential space while preserving a clean, minimalist aesthetic. The difficulty lay in balancing advanced functionality with visual simplicity',
@@ -168,11 +157,9 @@ const ProjectDetail = () => {
       clientType: 'Private Family',
       duration: '24 months',
       budget: '2 cr',
-      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      image: '',
       gallery: [
-        'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        'https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        'https://images.pexels.com/photos/416320/pexels-photo-416320.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
+
       ],
       description: 'Elegant 4BHK smart home with acoustic zoning, modern interiors, and best elevation design in Washim.',
       challenge: 'During construction, aligning structural elements with interior design goals was a key challenge. Integrating smart systems, managing vendor timelines, and preserving design intent under budget constraints required constant coordination. Achieving seamless finishes, optimal lighting, and functional zoning demanded precision across civil, electrical, and interior teams throughout the build.',
@@ -194,11 +181,9 @@ const ProjectDetail = () => {
       clientType: 'Private Family',
       duration: '24 months',
       budget: '2 cr',
-      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      image: '',
       gallery: [
-        'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        'https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        'https://images.pexels.com/photos/416320/pexels-photo-416320.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
+
       ],
       description: 'Elegant 4BHK smart home with acoustic zoning, modern interiors, and best elevation design in Washim.',
       challenge: 'During construction, aligning structural elements with interior design goals was a key challenge. Integrating smart systems, managing vendor timelines, and preserving design intent under budget constraints required constant coordination. Achieving seamless finishes, optimal lighting, and functional zoning demanded precision across civil, electrical, and interior teams throughout the build.',
@@ -220,11 +205,9 @@ const ProjectDetail = () => {
       clientType: 'Private Family',
       duration: '8 months',
       budget: '45 lakh',
-      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      image: '',
       gallery: [
-        'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        'https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        'https://images.pexels.com/photos/416320/pexels-photo-416320.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
+
       ],
       description: 'Smart 2BHK home with open layout, modular kitchen, and budget-friendly finishes in Yavatmal.',
       challenge: 'Designing within a ₹45 lakh budget required balancing aesthetics, functionality, and durability. Space constraints limited layout options, and material selection had to meet both cost and quality standards. Ensuring natural light, ventilation, and privacy in a compact footprint demanded thoughtful planning and efficient use of every square foot.',
@@ -246,11 +229,9 @@ const ProjectDetail = () => {
       clientType: 'Private Family',
       duration: '18 months',
       budget: '1 cr',
-      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      image: '',
       gallery: [
-        'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        'https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        'https://images.pexels.com/photos/416320/pexels-photo-416320.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
+   
       ],
       description: 'Modern 3BHK duplex with smart features, solar panels, and spacious layout in Yavatmal.',
       challenge: 'Balancing spacious design with budget constraints was key. The challenge lay in optimizing 2,200 sq ft without overcomplicating finishes or layouts. Integrating smart features, ensuring natural light, and maintaining privacy across zones required thoughtful planning. Coordinating vendors and managing material quality .',
@@ -272,11 +253,9 @@ const ProjectDetail = () => {
       clientType: 'Private Family',
       duration: '10 months',
       budget: '60 lakh',
-      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      image: '',
       gallery: [
-        'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        'https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        'https://images.pexels.com/photos/416320/pexels-photo-416320.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
+
       ],
       description: 'Compact 2BHK home with smart interiors, modular kitchen, and natural light in Yavatmal.',
       challenge: 'Designing a compact home within budget required smart space planning and material selection. Limited area posed challenges for storage, lighting, and ventilation. Balancing simplicity with comfort, while ensuring durability and aesthetic appeal, demanded thoughtful execution and coordination across vendors.',
@@ -298,11 +277,9 @@ const ProjectDetail = () => {
       clientType: 'Private Family',
       duration: '24 months',
       budget: '1.5 cr',
-      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      image: '',
       gallery: [
-        'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        'https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        'https://images.pexels.com/photos/416320/pexels-photo-416320.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
+
       ],
       description: 'Spacious 4BHK duplex bungalow with smart features, solar panels, and elegant interiors in Yavatmal.',
       challenge: 'Designing a 2,500 sq ft residence required balancing spaciousness with functionality. The challenge was to create fluid zones for living, dining, and bedrooms while integrating smart features discreetly. Managing lighting, ventilation, and privacy across a large footprint demanded precise planning, especially while coordinating civil and interior teams during execution.',
@@ -315,32 +292,6 @@ const ProjectDetail = () => {
         { label: 'Special Features', value: 'smart home, duplex , solar panels , bungalow' }
       ]
     },
-    {
-      id: 12,
-      title: 'Modern  Family Residential ',
-      category: ' Residential',
-      location: 'Yavatmal',
-      completionDate: '2022',
-      clientType: 'Private Family',
-      duration: '8 months',
-      budget: '45 lakh',
-      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
-      gallery: [
-        'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        'https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        'https://images.pexels.com/photos/416320/pexels-photo-416320.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
-      ],
-      description: 'Smart 2BHK home with open layout, modular kitchen, and budget-friendly finishes in Yavatmal.',
-      challenge: 'Designing within a ₹45 lakh budget required balancing aesthetics, functionality, and durability. Space constraints limited layout options, and material selection had to meet both cost and quality standards. Ensuring natural light, ventilation, and privacy in a compact footprint demanded thoughtful planning and efficient use of every square foot.',
-      solution: 'The team optimized layout with open-plan design and multifunctional furniture. Locally sourced materials ensured quality within budget. Neutral tones and smart lighting enhanced spaciousness. Strategic window placement improved ventilation and light. Every element—from flooring to fixtures—was chosen for longevity, simplicity, and comfort, delivering a refined yet affordable living space',
-      highlights: ['2BHK compact layout', 'Open living-dining zone', 'Modular kitchen setup', 'Budget-friendly materials', 'Low-maintenance finishes', 'Functional storage solutions'],
-      specifications: [
-        { label: 'Total Area', value: '1250 sf ft' },
-        { label: 'Bedroom', value: '2' },
-        { label: 'Bathroom', value: '3' },
-        { label: 'Special Features', value: 'smart home' }
-      ]
-    }
   ];
 
   const project: Project | undefined = projects.find(p => p.id === parseInt(id || '1'));
