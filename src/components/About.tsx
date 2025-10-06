@@ -1,7 +1,7 @@
 import { Paintbrush, Box, Sofa, Building, Home, Factory, Wrench, Hammer, Eye, Target, TrendingUp, MapPin } from 'lucide-react';
 import pavanImage from '../assets/Pavan_founder.jpg';
 import chetanImage from '../assets/Chetan_Co-Founder.jpg';
-import aboutImage from '../assets/IMG_1919.jpg';
+import aboutImage from '../assets/about.jpg';
 
 const About = () => {
   const visionMissionGoals = [
