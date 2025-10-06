@@ -1,11 +1,22 @@
-import React, { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Calendar, MapPin, Users, Filter } from 'lucide-react';
 
 const AllProjects = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
 
-  const projects = [
+  type Project = {
+    id: number;
+    title: string;
+    category: string;
+    location: string;
+    completionDate: string;
+    clientType: string;
+    description: string;
+    highlights: string[];
+  };
+
+  const projects: Project[] = [
     {
       id: 1,
       title: 'Maruti Suzuki Showroom',
@@ -13,7 +24,6 @@ const AllProjects = () => {
       location: 'Koradi Panjra Police Station, Nagpur',
       completionDate: 'In Progress',
       clientType: 'Company',
-      image: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
       description: 'Electrical installation and maintenance for showroom with branded lighting, safety systems, and dedicated power zones.',
       highlights: ['Electrical Setup', 'Load-balanced circuit']
     },
@@ -24,134 +34,135 @@ const AllProjects = () => {
       location: 'Washim',
       completionDate: '2025',
       clientType: 'Private Family',
-      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
       description: 'Elegant 4BHK smart home with acoustic zoning, modern interiors, and best elevation design in Washim.',
       highlights: ['Smart home integration Open-concept layout', 'Natural light optimization', 'Minimalist aesthetic', 'Custom furniture and storage', 'Energy-efficient appliances', 'Acoustic zoning for privacy','Elegant lighting design']
     },
     {
       id: 3,
-      title: 'Luxury Hotel Renovation',
-      category: 'Hospitality',
-      location: 'San Francisco, CA',
-      completionDate: '2024',
-      clientType: 'Hotel Chain',
-      image: 'https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-      description: 'Complete renovation of a historic 200-room luxury hotel, preserving architectural heritage while adding modern luxury.',
-      highlights: ['Historic Preservation', '200 Rooms', 'Luxury Finishes', 'Heritage Architecture']
+      title: 'Modern Family Residential ',
+      category: 'Residential',
+      location: 'Pipla fata , Nagpur',
+      completionDate: 'In progress',
+      clientType: 'Private Family',
+      description: 'Ongoing 3BHK smart home with modern layout, concealed wiring, and elegant elevation in Pipla Fata.',
+      highlights: ['Interior ', 'Construction', 'Best elevation ']
     },
     {
       id: 4,
-      title: 'Sustainable Warehouse Complex',
-      category: 'Industrial',
-      location: 'Oakland, CA',
-      completionDate: '2023',
-      clientType: 'Logistics Company',
-      image: 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-      description: 'A 150,000 sq ft warehouse complex with advanced logistics systems and sustainable design features.',
-      highlights: ['Solar Power System', 'Advanced Logistics', 'Sustainable Design', 'High-Bay Storage']
+      title: 'Modern Family Residential ',
+      category: 'Commercial & Residential',
+      location: 'Pipla fata , Nagpur',
+      completionDate: '2025',
+      clientType: 'Private Family',
+      description: 'Dual-purpose smart home with clinic below, acoustic zoning, epoxy finishes, and modern elevation design',
+      highlights: ['Interior ', 'Construction', 'Best elevation','Commerical ']
     },
     {
       id: 5,
-      title: 'Luxury Condominium Tower',
-      category: 'Residential',
-      location: 'San Diego, CA',
+      title: 'Modern Family Residential ',
+      category: ' Residential',
+      location: 'Shankarpur , Nagpur',
       completionDate: '2023',
-      clientType: 'Real Estate Developer',
-      image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-      description: 'A 25-story luxury condominium tower with premium amenities and panoramic ocean views.',
-      highlights: ['Ocean Views', '25 Stories', 'Luxury Amenities', 'Premium Finishes']
+      clientType: 'Private Family',
+      description: 'Minimalist 3BHK smart home with hidden wiring, glass partitions, and modern spatial flow in Shankarpur.',
+      highlights: ['Interior ', 'Construction', 'Best elevation']
     },
     {
       id: 6,
-      title: 'Medical Center Expansion',
-      category: 'Healthcare',
-      location: 'Sacramento, CA',
-      completionDate: '2024',
-      clientType: 'Healthcare System',
-      image: 'https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-      description: 'A state-of-the-art medical facility expansion with advanced surgical suites and patient care areas.',
-      highlights: ['Advanced Surgical Suites', 'Patient Care Focus', 'Medical Equipment Integration', 'Healing Environment']
-    },
-    {
-      id: 2,
       title: 'Modern  Family Residential ',
       category: ' Residential',
       location: 'Washim',
       completionDate: '2025',
       clientType: 'Private Family',
-      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
       description: 'Elegant 4BHK smart home with acoustic zoning, modern interiors, and best elevation design in Washim.',
-      highlights: ['Smart home integration Open-concept layout', 'Natural light optimization', 'Minimalist aesthetic', 'Custom furniture and storage', 'Energy-efficient appliances', 'Acoustic zoning for privacy','Elegant lighting design']
+      highlights: ['Smart home integration Open-concept layout', 'Natural light optimization']
     },
     {
-      id: 2,
+      id: 7,
       title: 'Modern  Family Residential ',
       category: ' Residential',
       location: 'Washim',
       completionDate: '2025',
       clientType: 'Private Family',
-      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
       description: 'Elegant 4BHK smart home with acoustic zoning, modern interiors, and best elevation design in Washim.',
-      highlights: ['Smart home integration Open-concept layout', 'Natural light optimization', 'Minimalist aesthetic', 'Custom furniture and storage', 'Energy-efficient appliances', 'Acoustic zoning for privacy','Elegant lighting design']
+      highlights: ['Smart home integration Open-concept layout', 'Natural light optimization']
     },
     {
-      id: 2,
+      id: 8,
       title: 'Modern  Family Residential ',
       category: ' Residential',
-      location: 'Washim',
-      completionDate: '2025',
+      location: 'Yavatmal',
+      completionDate: '2022',
       clientType: 'Private Family',
-      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-      description: 'Elegant 4BHK smart home with acoustic zoning, modern interiors, and best elevation design in Washim.',
-      highlights: ['Smart home integration Open-concept layout', 'Natural light optimization', 'Minimalist aesthetic', 'Custom furniture and storage', 'Energy-efficient appliances', 'Acoustic zoning for privacy','Elegant lighting design']
+      description: 'Smart 2BHK home with open layout, modular kitchen, and budget-friendly finishes in Yavatmal.',
+      highlights: ['2BHK compact layout', 'Open living-dining zone']
     },
     {
-      id: 2,
+      id: 9,
       title: 'Modern  Family Residential ',
       category: ' Residential',
-      location: 'Washim',
-      completionDate: '2025',
+      location: 'Yavatmal ',
+      completionDate: '2023',
       clientType: 'Private Family',
-      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-      description: 'Elegant 4BHK smart home with acoustic zoning, modern interiors, and best elevation design in Washim.',
-      highlights: ['Smart home integration Open-concept layout', 'Natural light optimization', 'Minimalist aesthetic', 'Custom furniture and storage', 'Energy-efficient appliances', 'Acoustic zoning for privacy','Elegant lighting design']
+      description: 'Modern 3BHK duplex with smart features, solar panels, and spacious layout in Yavatmal.',
+      highlights: ['3BHK layout with open living-dining', '2,200 sq ft built-up area']
     },
     {
-      id: 2,
+      id: 10,
       title: 'Modern  Family Residential ',
       category: ' Residential',
-      location: 'Washim',
-      completionDate: '2025',
+      location: 'Yavatmal',
+      completionDate: '2021',
       clientType: 'Private Family',
-      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-      description: 'Elegant 4BHK smart home with acoustic zoning, modern interiors, and best elevation design in Washim.',
-      highlights: ['Smart home integration Open-concept layout', 'Natural light optimization', 'Minimalist aesthetic', 'Custom furniture and storage', 'Energy-efficient appliances', 'Acoustic zoning for privacy','Elegant lighting design']
+      description: 'Compact 2BHK home with smart interiors, modular kitchen, and natural light in Yavatmal.',
+      highlights: ['2BHK layout', 'Open living-dining zone']
     },
     {
-      id: 2,
+      id: 11,
       title: 'Modern  Family Residential ',
       category: ' Residential',
-      location: 'Washim',
-      completionDate: '2025',
+      location: 'Yavatmal ',
+      completionDate: '2022',
       clientType: 'Private Family',
-      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-      description: 'Elegant 4BHK smart home with acoustic zoning, modern interiors, and best elevation design in Washim.',
-      highlights: ['Smart home integration Open-concept layout', 'Natural light optimization', 'Minimalist aesthetic', 'Custom furniture and storage', 'Energy-efficient appliances', 'Acoustic zoning for privacy','Elegant lighting design']
+      description: 'Spacious 4BHK duplex bungalow with smart features, solar panels, and elegant interiors in Yavatmal.',
+      highlights: ['2,500 sq ft built-up area', '4BHK layout with spacious living-dining zone']
     },
     {
-      id: 2,
+      id: 10,
       title: 'Modern  Family Residential ',
       category: ' Residential',
-      location: 'Washim',
-      completionDate: '2025',
+      location: 'Yavatmal',
+      completionDate: '2021',
       clientType: 'Private Family',
-      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-      description: 'Elegant 4BHK smart home with acoustic zoning, modern interiors, and best elevation design in Washim.',
-      highlights: ['Smart home integration Open-concept layout', 'Natural light optimization', 'Minimalist aesthetic', 'Custom furniture and storage', 'Energy-efficient appliances', 'Acoustic zoning for privacy','Elegant lighting design']
+      description: 'Compact 2BHK home with smart interiors, modular kitchen, and natural light in Yavatmal.',
+      highlights: ['2BHK layout', 'Open living-dining zone']
+    },
+    {
+      id: 12,
+      title: 'Modern  Family Residential ',
+      category: ' Residential',
+      location: 'Yavatmal',
+      completionDate: '2022',
+      clientType: 'Private Family',
+      description: 'Smart 2BHK home with open layout, modular kitchen, and budget-friendly finishes in Yavatmal.',
+      highlights: ['2BHK compact layout', 'Open living-dining zone']
     }
   ];
 
-  const categories = ['All', 'Residential', 'Commercial', 'Hospitality', 'Industrial', 'Healthcare'];
+  // Build categories from data
+  const categories = useMemo(() => {
+    const set = new Set<string>(projects.map(p => p.category));
+    return ['All', ...Array.from(set)];
+  }, [projects]);
+
+  // Load thumbnails from local assets folders similar to ProjectDetail
+  const imageModules = import.meta.glob('../assets/id*/**/*.{jpg,jpeg,png,JPG,PNG}', { eager: true, as: 'url' }) as Record<string, string>;
+  const getThumbForId = (projectId: number): string | undefined => {
+    const segment = `/id${projectId}/`;
+    const entries = Object.entries(imageModules).filter(([p]) => p.includes(segment));
+    const thumb = entries.find(([p]) => /Thumbnail\.(jpg|jpeg|png)$/i.test(p))?.[1];
+    return thumb || entries[0]?.[1];
+  };
 
   const filteredProjects = selectedCategory === 'All' 
     ? projects 
@@ -215,7 +226,7 @@ const AllProjects = () => {
             <div key={project.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
               <div className="relative overflow-hidden">
                 <img 
-                  src={project.image}
+                  src={getThumbForId(project.id) || ''}
                   alt={project.title}
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                 />

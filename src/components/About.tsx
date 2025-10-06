@@ -1,7 +1,7 @@
-import React from 'react';
-import { CheckCircle, Paintbrush, Box, Sofa, Building, Home, Zap, Factory, Wrench, Hammer, Eye, Target, TrendingUp, MapPin } from 'lucide-react';
+import { Paintbrush, Box, Sofa, Building, Home, Factory, Wrench, Hammer, Eye, Target, TrendingUp, MapPin } from 'lucide-react';
 import pavanImage from '../assets/Pavan_founder.jpg';
 import chetanImage from '../assets/Chetan_Co-Founder.jpg';
+import aboutImage from '../assets/IMG_1919.jpg';
 
 const About = () => {
   const visionMissionGoals = [
@@ -71,7 +71,8 @@ const About = () => {
     <section id="about" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">About Pavan Home Decor</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">About Pavan Home Decor</h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full mx-auto mb-6" />
           <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Established in 2021 and based in Nagpur, Pavan Home Decor offers end-to-end services in construction,
             interior design, plumbing, and electrical work. We specialize in transforming residential and commercial
@@ -82,11 +83,11 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
           <div className="relative">
             <img
-              src="https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+              src={aboutImage}
               alt="Construction team at work"
-              className="rounded-lg shadow-xl"
+              className="rounded-xl shadow-xl"
             />
-            <div className="absolute -bottom-6 -left-6 bg-orange-600 text-white p-6 rounded-lg shadow-lg">
+            <div className="absolute -bottom-6 -left-6 bg-orange-600 text-white p-6 rounded-xl shadow-lg">
               <div className="text-3xl font-bold">2021</div>
               <div className="text-orange-100">Established</div>
             </div>
@@ -104,14 +105,14 @@ const About = () => {
               partner for building and beautifying spaces across Maharashtra.
             </p>
 
-            <div className="bg-gray-50 rounded-lg p-6">
+            <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
               <h4 className="font-semibold text-gray-900 mb-4 flex items-center">
                 <MapPin className="h-5 w-5 text-orange-600 mr-2" />
                 Service Areas
               </h4>
               <div className="flex flex-wrap gap-3">
                 {serviceAreas.map((area, index) => (
-                  <span key={index} className="bg-white px-4 py-2 rounded-full text-gray-700 shadow-sm">
+                  <span key={index} className="bg-white px-4 py-2 rounded-full text-gray-700 shadow-sm ring-1 ring-gray-100">
                     {area.name}
                   </span>
                 ))}
@@ -122,7 +123,7 @@ const About = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           {visionMissionGoals.map((item, index) => (
-            <div key={index} className="bg-gradient-to-br from-orange-50 to-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+            <div key={index} className="bg-gradient-to-br from-orange-50/60 to-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-orange-100">
               <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                 <item.icon className="h-8 w-8 text-orange-600" />
               </div>

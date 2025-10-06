@@ -1,11 +1,32 @@
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Calendar, MapPin, CheckCircle, Award, Clock, DollarSign } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { ArrowLeft, Calendar, MapPin, CheckCircle, Award, Clock, IndianRupee } from 'lucide-react';
 import project1Image from '../assets/project1.jpg';
+
+type ProjectSpec = { label: string; value: string };
+type Project = {
+  id: number;
+  title: string;
+  category: string;
+  location: string;
+  completionDate: string;
+  clientType: string;
+  duration: string;
+  budget: string;
+  image: string;
+  gallery: string[];
+  videos?: string[];
+  description: string;
+  challenge: string;
+  solution: string;
+  highlights: string[];
+  specifications: ProjectSpec[];
+};
 
 const ProjectDetail = () => {
   const { id } = useParams();
   
-  const projects = [
+  const projects: Project[] = [
     {
       id: 1,
       title: 'Maruti Suzuki Showroom',
@@ -17,9 +38,7 @@ const ProjectDetail = () => {
       budget: '28 lakhs',
       image: project1Image,
       gallery: [
-        project1Image,
-        'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        'https://images.pexels.com/photos/1571453/pexels-photo-1571453.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
+        project1Image
       ],
       description: 'Electrical installation and maintenance for showroom with branded lighting, safety systems, and dedicated power zones.',
       challenge: 'Executing electrical work for a high-footfall showroom required precision and brand compliance. Ensuring safe load distribution, optimal lighting, and uninterrupted power for display zones and service bays was critical. Coordinating with civil teams during active construction and planning for long-term maintenance added complexity to the execution phase.',
@@ -40,10 +59,16 @@ const ProjectDetail = () => {
       duration: '24 months',
       budget: '4 cr',
       image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      // Replace the placeholder image URLs below with your actual images
       gallery: [
         'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
         'https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
         'https://images.pexels.com/photos/416320/pexels-photo-416320.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
+      ],
+      // Add your video URLs (mp4 links or YouTube share links)
+      videos: [
+        // 'https://your-cdn.com/video1.mp4',
+        // 'https://www.youtube.com/embed/VIDEO_ID'
       ],
       description: 'Luxury 4BHK duplex with smart automation, lift, sensor kitchen, movie room, and artistic murals.',
       challenge: 'Designing a luxury duplex within a 3,000 sq ft footprint required balancing smart features with aesthetic depth. Integrating a lift, sensor kitchen, and movie room without compromising flow and privacy was complex. Coordinating murals, lighting, and automation across levels demanded precision and seamless collaboration during construction.',
@@ -318,18 +343,41 @@ const ProjectDetail = () => {
     }
   ];
 
-  const project = projects.find(p => p.id === parseInt(id || '1'));
+  const project: Project | undefined = projects.find(p => p.id === parseInt(id || '1'));
 
-  if (!project) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Project Not Found</h1>
-          <Link to="/" className="text-blue-700 hover:text-orange-600">Return to Home</Link>
-        </div>
-      </div>
-    );
-  }
+  // No early return to keep Hooks un-conditional; handle not-found in JSX below
+
+  // Lazy-load local assets only when viewing this page
+  const imageImporters = import.meta.glob('../assets/id*/**/*.{jpg,jpeg,png,JPG,PNG}', { as: 'url' }) as Record<string, () => Promise<string>>;
+  const videoImporters = import.meta.glob('../assets/id*/**/*.{mp4,MP4,mov,MOV}', { as: 'url' }) as Record<string, () => Promise<string>>;
+
+  const [heroImage, setHeroImage] = useState<string>('');
+  const [galleryImages, setGalleryImages] = useState<string[]>([]);
+  const [videosForProject, setVideosForProject] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (!project) return;
+    const loadMedia = async () => {
+      const idFolderSegment = `/id${project!.id}/`;
+      const imageEntries = Object.entries(imageImporters).filter(([path]) => path.includes(idFolderSegment));
+      const videoEntries = Object.entries(videoImporters).filter(([path]) => path.includes(idFolderSegment));
+
+      const loadedImages = await Promise.all(imageEntries.map(([, importer]) => importer()));
+      const loadedVideos = await Promise.all(videoEntries.map(([, importer]) => importer()));
+
+      // Prefer Thumbnail for hero
+      const thumbIndex = imageEntries.findIndex(([path]) => /Thumbnail\.(jpg|jpeg|png)$/i.test(path));
+      const thumbUrl = thumbIndex >= 0 ? await imageEntries[thumbIndex][1]() : undefined;
+      const hero = thumbUrl || loadedImages[0] || '';
+      const gallery = loadedImages.filter((url) => url !== hero);
+
+      setHeroImage(hero);
+      setGalleryImages(gallery);
+      setVideosForProject(loadedVideos);
+    };
+    loadMedia();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [project?.id]);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -347,24 +395,35 @@ const ProjectDetail = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="relative h-96 bg-gray-900">
-        <img 
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover opacity-70"
-        />
-        <div className="absolute inset-0 flex items-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl">
-              <span className="bg-blue-700 text-white px-3 py-1 rounded-full text-sm font-semibold mb-4 inline-block">
-                {project.category}
-              </span>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{project.title}</h1>
-              <p className="text-xl text-gray-200">{project.description}</p>
+      {project ? (
+        <div className="relative h-96 bg-gray-900">
+          {heroImage && (
+            <img 
+              src={heroImage}
+              alt={project.title}
+              className="w-full h-full object-cover opacity-70"
+            />
+          )}
+          <div className="absolute inset-0 flex items-center">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="max-w-3xl">
+                <span className="bg-blue-700 text-white px-3 py-1 rounded-full text-sm font-semibold mb-4 inline-block">
+                  {project.category}
+                </span>
+                <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{project.title}</h1>
+                <p className="text-xl text-gray-200">{project.description}</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <div className="relative h-96 bg-gray-100 flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-2xl font-bold text-gray-900 mb-4">Project Not Found</h1>
+            <Link to="/" className="text-blue-700 hover:text-orange-600">Return to Home</Link>
+          </div>
+        </div>
+      )}
 
       {/* Project Details */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -376,22 +435,22 @@ const ProjectDetail = () => {
               <div className="bg-white p-4 rounded-lg shadow-sm text-center">
                 <MapPin className="h-6 w-6 text-blue-700 mx-auto mb-2" />
                 <div className="text-sm text-gray-600">Location</div>
-                <div className="font-semibold text-gray-900">{project.location}</div>
+                <div className="font-semibold text-gray-900">{project?.location}</div>
               </div>
               <div className="bg-white p-4 rounded-lg shadow-sm text-center">
                 <Calendar className="h-6 w-6 text-blue-700 mx-auto mb-2" />
                 <div className="text-sm text-gray-600">Completed</div>
-                <div className="font-semibold text-gray-900">{project.completionDate}</div>
+                <div className="font-semibold text-gray-900">{project?.completionDate}</div>
               </div>
               <div className="bg-white p-4 rounded-lg shadow-sm text-center">
                 <Clock className="h-6 w-6 text-blue-700 mx-auto mb-2" />
                 <div className="text-sm text-gray-600">Duration</div>
-                <div className="font-semibold text-gray-900">{project.duration}</div>
+                <div className="font-semibold text-gray-900">{project?.duration}</div>
               </div>
               <div className="bg-white p-4 rounded-lg shadow-sm text-center">
-                <DollarSign className="h-6 w-6 text-blue-700 mx-auto mb-2" />
+                <IndianRupee className="h-6 w-6 text-blue-700 mx-auto mb-2" />
                 <div className="text-sm text-gray-600">Budget</div>
-                <div className="font-semibold text-gray-900">{project.budget}</div>
+                <div className="font-semibold text-gray-900">{project?.budget}</div>
               </div>
             </div>
 
@@ -401,12 +460,12 @@ const ProjectDetail = () => {
               
               <div className="mb-8">
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">The Challenge</h3>
-                <p className="text-gray-600 leading-relaxed">{project.challenge}</p>
+                <p className="text-gray-600 leading-relaxed">{project?.challenge}</p>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">Our Solution</h3>
-                <p className="text-gray-600 leading-relaxed">{project.solution}</p>
+                <p className="text-gray-600 leading-relaxed">{project?.solution}</p>
               </div>
             </div>
 
@@ -414,15 +473,42 @@ const ProjectDetail = () => {
             <div className="bg-white rounded-lg shadow-sm p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Project Gallery</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {project.gallery.map((image, index) => (
+                {galleryImages.map((image, index) => (
                   <img 
                     key={index}
                     src={image}
-                    alt={`${project.title} - Image ${index + 1}`}
+                    alt={`${project?.title ?? 'Project'} - Image ${index + 1}`}
                     className="w-full h-64 object-cover rounded-lg"
                   />
                 ))}
               </div>
+              {videosForProject.length > 0 && (
+                <div className="mt-8">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Videos</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {videosForProject.map((videoUrl: string, index: number) => (
+                      <div key={index} className="aspect-video w-full max-w-xl mx-auto overflow-hidden rounded-lg shadow">
+                        {videoUrl.includes('youtube.com') || videoUrl.includes('youtu.be') ? (
+                          <iframe
+                            className="w-full h-full"
+                            src={videoUrl}
+                            title={`Video ${index + 1}`}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                          />
+                        ) : (
+                          <video
+                            className="w-full h-full"
+                            src={videoUrl}
+                            controls
+                            preload="metadata"
+                          />
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 
@@ -432,7 +518,7 @@ const ProjectDetail = () => {
             <div className="bg-white rounded-lg shadow-sm p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Project Highlights</h3>
               <ul className="space-y-3">
-                {project.highlights.map((highlight, index) => (
+                    {project?.highlights.map((highlight, index) => (
                   <li key={index} className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
                     <span className="text-gray-700">{highlight}</span>
@@ -445,7 +531,7 @@ const ProjectDetail = () => {
             <div className="bg-white rounded-lg shadow-sm p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Specifications</h3>
               <dl className="space-y-3">
-                {project.specifications.map((spec, index) => (
+                {project?.specifications.map((spec, index) => (
                   <div key={index}>
                     <dt className="text-sm font-medium text-gray-600">{spec.label}</dt>
                     <dd className="text-gray-900">{spec.value}</dd>

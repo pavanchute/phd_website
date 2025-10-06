@@ -19,9 +19,7 @@ const Footer = () => {
               <span className="text-2xl font-bold">Pavan Home Decor</span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              Creating beautiful homes since 2008. We are your trusted partner for all home decor, 
-              interior design, and renovation needs. Quality craftsmanship, reliable service, 
-              exceptional results.
+              Established in 2021 and based in Nagpur, Pavan Home Decor offers end-to-end services in construction, interior design, plumbing, and electrical work. We specialize in transforming residential and commercial spaces with a blend of technical expertise, creative design, and reliable execution.
             </p>
             <div className="space-y-2">
               <div className="flex items-center space-x-3">
@@ -47,7 +45,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-gray-300 hover:text-orange-400 transition-colors"
+                    className="text-gray-300 hover:text-white transition-colors hover:underline underline-offset-2"
                   >
                     {link.name}
                   </button>
@@ -59,12 +57,12 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2 text-gray-300">
-              <li>Residential Construction</li>
-              <li>Commercial Buildings</li>
-              <li>Home Renovations</li>
-              <li>Repair & Maintenance</li>
-              <li>Interior Finishing</li>
-              <li>Emergency Services</li>
+              <li className="hover:text-white transition-colors">Residential Construction</li>
+              <li className="hover:text-white transition-colors">Commercial Buildings</li>
+              <li className="hover:text-white transition-colors">Home Renovations</li>
+              <li className="hover:text-white transition-colors">Repair & Maintenance</li>
+              <li className="hover:text-white transition-colors">Interior Finishing</li>
+              <li className="hover:text-white transition-colors">Emergency Services</li>
             </ul>
           </div>
         </div>
@@ -74,10 +72,6 @@ const Footer = () => {
             <p className="text-gray-400 text-sm">
               © {new Date().getFullYear()} Pavan Home Decor. All rights reserved.
             </p>
-            <div className="text-gray-400 text-sm">
-              <p>Developed by: Bhoomit Rachchawar & Mrunal Biranwar</p>
-              <p>Managed by: Harshada Gaidhane</p>
-            </div>
           </div>
         </div>
       </div>

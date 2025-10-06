@@ -45,8 +45,9 @@ const Services = () => {
     <section id="services" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">What We Do</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-gray-900 mb-3">What We Do</h2>
+          <div className="w-20 h-1.5 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full mx-auto mb-5" />
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             From concept to completion, we offer comprehensive construction services 
             backed by years of experience and a commitment to excellence.
           </p>
@@ -58,10 +59,10 @@ const Services = () => {
             return (
               <div 
                 key={index} 
-                className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow group"
+                className="bg-white rounded-xl border border-gray-100 shadow-sm p-8 transition-all group hover:shadow-md hover:-translate-y-1 ring-1 ring-transparent hover:ring-orange-200"
               >
                 <div className="flex items-center mb-6">
-                  <div className="bg-blue-100 p-3 rounded-lg group-hover:bg-orange-100 transition-colors">
+                  <div className="p-3 rounded-lg transition-colors bg-gradient-to-br from-blue-50 to-blue-100 group-hover:from-orange-50 group-hover:to-orange-100">
                     <IconComponent className="h-8 w-8 text-blue-700 group-hover:text-orange-600 transition-colors" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 ml-4">{service.title}</h3>
@@ -71,7 +72,7 @@ const Services = () => {
                 
                 <ul className="space-y-2">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-sm text-gray-700">
+                    <li key={featureIndex} className="flex items-center text-gray-700">
                       <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                       {feature}
                     </li>
@@ -82,14 +83,6 @@ const Services = () => {
           })}
         </div>
 
-        <div className="text-center mt-16">
-          <button 
-            onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
-          >
-            Get Started Today
-          </button>
-        </div>
       </div>
     </section>
   );

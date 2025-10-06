@@ -44,9 +44,9 @@ const Header = () => {
       isScrolled || !isHomePage ? 'bg-white shadow-lg' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-3">
           <div className="flex items-center space-x-2">
-            <img src={isScrolled || !isHomePage ? blueLogo : logo} alt="Pavan Home Decor" className="h-20 w-20" />
+            <img src={isScrolled || !isHomePage ? blueLogo : logo} alt="Pavan Home Decor" className="h-14 w-14" />
             <span className={`text-2xl font-bold ${isScrolled || !isHomePage ? 'text-blue-700' : 'text-white'}`}>
               Pavan Home Decor
             </span>

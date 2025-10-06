@@ -1,6 +1,6 @@
 # Pavan Home Decor Website
 
-A modern, responsive website for Pavan Home Decor - a professional interior design and home decor company.
+A modern, responsive website for Pavan Home Decor - a professional interior design and home decor company.dfg
 
 ## Features
 

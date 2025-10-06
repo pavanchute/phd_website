@@ -1,10 +1,20 @@
 import React from 'react';
-import { ArrowRight, Calendar, MapPin, Users } from 'lucide-react';
+import { ArrowRight, Calendar, MapPin, Users, Image as ImageIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import project1Image from '../assets/project1.jpg';
 
 const Projects = () => {
-  const projects = [
+  type Project = {
+    id: number;
+    title: string;
+    category: string;
+    location: string;
+    completionDate: string;
+    clientType: string;
+    description: string;
+    highlights: string[];
+  };
+
+  const projects: Project[] = [
     {
       id: 1,
       title: 'Maruti Suzuki Showroom',
@@ -12,51 +22,76 @@ const Projects = () => {
       location: 'Koradi Panjra Police Station, Nagpur',
       completionDate: 'In Progress',
       clientType: 'Company',
-      image: project1Image,
       description: 'Electrical installation and maintenance for showroom with branded lighting, safety systems, and dedicated power zones.',
       highlights: ['Electrical Setup', 'Load-balanced circuit']
     },
     {
       id: 2,
-      title: 'Downtown Office Complex',
-      category: 'Commercial',
-      location: 'Los Angeles, CA',
+      title: 'Modern Family Residential ',
+      category: ' Residential',
+      location: 'Pardi , Nagpur',
+      completionDate: '2025',
+      clientType: 'Private Family',
+      description: 'Luxury 4BHK duplex with smart automation, lift, sensor kitchen, movie room, and artistic murals.',
+      highlights: ['Smart home integration Open-concept layout', 'Duplex layout with private lift']
+    },
+    {
+      id: 3,
+      title: 'Modern Family Residential ',
+      category: 'Residential',
+      location: 'Pipla fata , Nagpur',
+      completionDate: 'In progress',
+      clientType: 'Private Family',
+      description: 'Ongoing 3BHK smart home with modern layout, concealed wiring, and elegant elevation in Pipla Fata.',
+      highlights: ['Interior ', 'Construction', 'Best elevation ']
+    },
+    {
+      id: 4,
+      title: 'Modern Family Residential ',
+      category: 'Commercial & Residential',
+      location: 'Pipla fata , Nagpur',
+      completionDate: '2025',
+      clientType: 'Private Family',
+      description: 'Dual-purpose smart home with clinic below, acoustic zoning, epoxy finishes, and modern elevation design',
+      highlights: ['Interior ', 'Construction', 'Best elevation','Commerical ']
+    },
+    {
+      id: 5,
+      title: 'Modern Family Residential ',
+      category: ' Residential',
+      location: 'Shankarpur , Nagpur',
       completionDate: '2023',
-      clientType: 'Corporate',
-      image: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-      description: 'A 12-story commercial office building with modern amenities, flexible workspaces, and LEED Gold certification.',
-      highlights: ['LEED Gold Certified', '12 Stories', 'Modern Amenities', 'Flexible Workspaces']
+      clientType: 'Private Family',
+      description: 'Minimalist 3BHK smart home with hidden wiring, glass partitions, and modern spatial flow in Shankarpur.',
+      highlights: ['Interior ', 'Construction', 'Best elevation']
     },
     {
-      id: 3,
-      title: 'Luxury Hotel Renovation',
-      category: 'Hospitality',
-      location: 'San Francisco, CA',
-      completionDate: '2024',
-      clientType: 'Hotel Chain',
-      image: 'https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-      description: 'Complete renovation of a historic 200-room luxury hotel, preserving architectural heritage while adding modern luxury.',
-      highlights: ['Historic Preservation', '200 Rooms', 'Luxury Finishes', 'Heritage Architecture']
-    },
-    {
-      id: 3,
-      title: 'Luxury Hotel Renovation',
-      category: 'Hospitality',
-      location: 'San Francisco, CA',
-      completionDate: '2024',
-      clientType: 'Hotel Chain',
-      image: 'https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-      description: 'Complete renovation of a historic 200-room luxury hotel, preserving architectural heritage while adding modern luxury.',
-      highlights: ['Historic Preservation', '200 Rooms', 'Luxury Finishes', 'Heritage Architecture']
+      id: 6,
+      title: 'Modern  Family Residential ',
+      category: ' Residential',
+      location: 'Washim',
+      completionDate: '2025',
+      clientType: 'Private Family',
+      description: 'Elegant 4BHK smart home with acoustic zoning, modern interiors, and best elevation design in Washim.',
+      highlights: ['Smart home integration Open-concept layout', 'Natural light optimization']
     }
   ];
+
+  const imageModules = import.meta.glob('../assets/id*/**/*.{jpg,jpeg,png,JPG,PNG}', { eager: true, as: 'url' }) as Record<string, string>;
+  const getThumbForId = (projectId: number): string | undefined => {
+    const segment = `/id${projectId}/`;
+    const entries = Object.entries(imageModules).filter(([p]) => p.includes(segment));
+    const thumb = entries.find(([p]) => /Thumbnail\.(jpg|jpeg|png)$/i.test(p))?.[1];
+    return thumb || entries[0]?.[1];
+  };
 
   return (
     <section id="projects" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Recent Projects</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-gray-900 mb-3">Our Recent Projects</h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full mx-auto mb-5" />
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Explore our portfolio of successful construction projects that showcase our expertise, 
             quality craftsmanship, and commitment to excellence.
           </p>
@@ -64,15 +99,21 @@ const Projects = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <div key={project.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+            <div key={project.id} className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden transition-all group hover:shadow-md hover:-translate-y-1">
               <div className="relative overflow-hidden">
-                <img 
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+                {getThumbForId(project.id) ? (
+                  <img 
+                    src={getThumbForId(project.id)!}
+                    alt={project.title}
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                ) : (
+                  <div className="w-full h-64 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+                    <ImageIcon className="h-10 w-10 text-gray-500" />
+                  </div>
+                )}
                 <div className="absolute top-4 left-4">
-                  <span className="bg-blue-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  <span className="bg-blue-700/90 backdrop-blur text-white px-3 py-1 rounded-full text-sm font-semibold shadow">
                     {project.category}
                   </span>
                 </div>
@@ -99,7 +140,7 @@ const Projects = () => {
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.highlights.slice(0, 2).map((highlight, index) => (
-                    <span key={index} className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
+                    <span key={index} className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs ring-1 ring-gray-200">
                       {highlight}
                     </span>
                   ))}
@@ -120,7 +161,7 @@ const Projects = () => {
         <div className="text-center mt-12">
           <Link
             to="/projects"
-            className="bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors inline-flex items-center group"
+            className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors inline-flex items-center group shadow-md hover:shadow-lg"
           >
             View All Projects
             <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
