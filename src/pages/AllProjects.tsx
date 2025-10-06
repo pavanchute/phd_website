@@ -203,7 +203,7 @@ const AllProjects = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project) => (
-            <div key={project.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+            <Link to={`/project/${project.id}`} key={project.id} className="block bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
               <div className="relative overflow-hidden">
                 <img 
                   src={getThumbForId(project.id) || ''}
@@ -244,15 +244,12 @@ const AllProjects = () => {
                   ))}
                 </div>
 
-                <Link
-                  to={`/project/${project.id}`}
-                  className="inline-flex items-center text-blue-700 hover:text-orange-600 font-semibold transition-colors group"
-                >
+                <div className="inline-flex items-center text-blue-700 hover:text-orange-600 font-semibold transition-colors group">
                   View Project Details
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
