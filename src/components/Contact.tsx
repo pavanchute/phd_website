@@ -17,7 +17,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      details: ['pawanhomedecor@gmail.com'],
+      details: ['pavanhomedecor@gmail.com'],
       action: 'mailto:pawanhomedecor@gmail.com'
     }
   ];
@@ -29,7 +29,7 @@ const Contact = () => {
     },
     {
       icon: Instagram,
-      href: 'https://www.instagram.com/pavan_home_decor/',
+      href: 'https://www.instagram.com/pavan_home_decor_/',
     }
   ];
 
