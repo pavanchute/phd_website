@@ -131,7 +131,7 @@ const AllProjects = () => {
 
   // Build categories from data
   const categories = useMemo(() => {
-    const set = new Set<string>(projects.map(p => p.category));
+    const set = new Set<string>(projects.map(p => p.category.trim()));
     return ['All', ...Array.from(set)];
   }, [projects]);
 
@@ -146,7 +146,7 @@ const AllProjects = () => {
 
   const filteredProjects = selectedCategory === 'All' 
     ? projects 
-    : projects.filter(project => project.category === selectedCategory);
+    : projects.filter(project => project.category.trim() === selectedCategory);
 
   return (
     <div className="min-h-screen bg-gray-50">
