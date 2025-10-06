@@ -24,7 +24,7 @@ const HomePage = () => (
 
 function App() {
   return (
-    <Router>
+    <Router basename="/phd_website/">
       <div className="min-h-screen">
         <Routes>
           <Route path="/" element={<HomePage />} />
