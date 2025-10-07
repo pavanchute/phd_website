@@ -69,28 +69,28 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-24 bg-gradient-to-b from-white via-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">About Pavan Home Decor</h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full mx-auto mb-6" />
-          <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl font-bold text-gray-900 mb-5">About Pavan Home Decor</h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full mx-auto mb-8" />
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Established in 2021 and based in Nagpur, Pavan Home Decor offers end-to-end services in construction,
             interior design, plumbing, and electrical work. We specialize in transforming residential and commercial
             spaces with a blend of technical expertise, creative design, and reliable execution.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
           <div className="relative">
             <img
               src={aboutImage}
               alt="Construction team at work"
-              className="rounded-xl shadow-xl"
+              className="rounded-2xl shadow-2xl"
             />
-            <div className="absolute -bottom-6 -left-6 bg-orange-600 text-white p-6 rounded-xl shadow-lg">
-              <div className="text-3xl font-bold">2021</div>
-              <div className="text-orange-100">Established</div>
+            <div className="absolute -bottom-6 -left-6 bg-gradient-to-br from-orange-500 to-orange-600 text-white p-7 rounded-2xl shadow-2xl">
+              <div className="text-4xl font-bold">2021</div>
+              <div className="text-orange-100 font-semibold">Established</div>
             </div>
           </div>
 
@@ -106,14 +106,14 @@ const About = () => {
               partner for building and beautifying spaces across Maharashtra.
             </p>
 
-            <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-              <h4 className="font-semibold text-gray-900 mb-4 flex items-center">
-                <MapPin className="h-5 w-5 text-orange-600 mr-2" />
+            <div className="bg-gradient-to-br from-orange-50 to-white rounded-2xl p-8 border border-orange-200 shadow-lg">
+              <h4 className="font-bold text-gray-900 mb-5 flex items-center text-lg">
+                <MapPin className="h-6 w-6 text-orange-600 mr-2" />
                 Service Areas
               </h4>
               <div className="flex flex-wrap gap-3">
                 {serviceAreas.map((area, index) => (
-                  <span key={index} className="bg-white px-4 py-2 rounded-full text-gray-700 shadow-sm ring-1 ring-gray-100">
+                  <span key={index} className="bg-white px-5 py-2.5 rounded-full text-gray-800 font-semibold shadow-md ring-1 ring-orange-200 hover:ring-orange-400 hover:shadow-lg transition-all">
                     {area.name}
                   </span>
                 ))}
@@ -122,56 +122,56 @@ const About = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
           {visionMissionGoals.map((item, index) => (
-            <div key={index} className="bg-gradient-to-br from-orange-50/60 to-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-orange-100">
-              <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                <item.icon className="h-8 w-8 text-orange-600" />
+            <div key={index} className="bg-gradient-to-br from-orange-50 to-white p-10 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-orange-200 hover:border-orange-400 hover:scale-105">
+              <div className="bg-gradient-to-br from-orange-500 to-orange-600 w-20 h-20 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                <item.icon className="h-10 w-10 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">{item.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{item.description}</p>
+              <p className="text-gray-600 leading-relaxed text-lg">{item.description}</p>
             </div>
           ))}
         </div>
 
-        <div className="mb-20">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">Meet Our Team</h3>
-            <p className="text-lg text-gray-600">Expert professionals dedicated to bringing your vision to life</p>
+        <div className="mb-24">
+          <div className="text-center mb-16">
+            <h3 className="text-4xl font-bold text-gray-900 mb-5">Meet Our Team</h3>
+            <p className="text-xl text-gray-600">Expert professionals dedicated to bringing your vision to life</p>
           </div>
 
           <div className="space-y-16">
             {teamMembers.map((member, index) => (
-              <div key={index} className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg overflow-hidden">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-8 md:p-12">
+              <div key={index} className="bg-gradient-to-br from-white to-gray-50 rounded-3xl shadow-2xl overflow-hidden border border-gray-200">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-10 md:p-14">
                   <div className="lg:col-span-1 flex flex-col items-center text-center">
                     {member.image ? (
                       <img
                         src={member.image}
                         alt={member.name}
-                        className="w-48 h-48 rounded-full object-cover shadow-lg mb-6"
+                        className="w-56 h-56 rounded-full object-cover shadow-2xl mb-6 ring-4 ring-orange-500/30"
                       />
                     ) : (
-                      <div className="w-48 h-48 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-lg mb-6">
-                        <span className="text-5xl font-bold text-white">{member.name.charAt(0)}</span>
+                      <div className="w-56 h-56 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-2xl mb-6 ring-4 ring-orange-500/30">
+                        <span className="text-6xl font-bold text-white">{member.name.charAt(0)}</span>
                       </div>
                     )}
-                    <h4 className="text-2xl font-bold text-gray-900 mb-2">{member.name}</h4>
-                    <p className="text-orange-600 font-semibold mb-2">{member.role}</p>
-                    <p className="text-gray-600 text-sm">{member.title}</p>
+                    <h4 className="text-3xl font-bold text-gray-900 mb-3">{member.name}</h4>
+                    <p className="text-orange-600 font-bold text-lg mb-2">{member.role}</p>
+                    <p className="text-gray-600">{member.title}</p>
                   </div>
 
                   <div className="lg:col-span-2">
-                    <h5 className="text-xl font-bold text-gray-900 mb-6">Areas of Expertise</h5>
-                    <div className="space-y-4">
+                    <h5 className="text-2xl font-bold text-gray-900 mb-7">Areas of Expertise</h5>
+                    <div className="space-y-5">
                       {member.expertise.map((skill, skillIndex) => (
-                        <div key={skillIndex} className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                          <div className="bg-orange-100 p-3 rounded-lg flex-shrink-0">
-                            <skill.icon className="h-6 w-6 text-orange-600" />
+                        <div key={skillIndex} className="flex items-start space-x-4 p-5 bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-orange-300">
+                          <div className="bg-gradient-to-br from-orange-500 to-orange-600 p-3 rounded-xl flex-shrink-0 shadow-lg">
+                            <skill.icon className="h-6 w-6 text-white" />
                           </div>
                           <div>
-                            <h6 className="font-semibold text-gray-900 mb-1">{skill.text}</h6>
-                            <p className="text-gray-600 text-sm leading-relaxed">{skill.desc}</p>
+                            <h6 className="font-bold text-gray-900 mb-2 text-lg">{skill.text}</h6>
+                            <p className="text-gray-600 leading-relaxed">{skill.desc}</p>
                           </div>
                         </div>
                       ))}

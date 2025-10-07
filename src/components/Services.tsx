@@ -42,13 +42,13 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-gray-50">
+    <section id="services" className="py-24 bg-gradient-to-b from-gray-50 via-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-3">What We Do</h2>
-          <div className="w-20 h-1.5 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full mx-auto mb-5" />
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            From concept to completion, we offer comprehensive construction services 
+        <div className="text-center mb-20">
+          <h2 className="text-5xl font-bold text-gray-900 mb-4">What We Do</h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full mx-auto mb-6" />
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            From concept to completion, we offer comprehensive construction services
             backed by years of experience and a commitment to excellence.
           </p>
         </div>
@@ -57,24 +57,24 @@ const Services = () => {
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <div 
-                key={index} 
-                className="bg-white rounded-xl border border-gray-100 shadow-sm p-8 transition-all group hover:shadow-md hover:-translate-y-1 ring-1 ring-transparent hover:ring-orange-200"
+              <div
+                key={index}
+                className="bg-white rounded-2xl border border-gray-200 shadow-lg p-8 transition-all group hover:shadow-2xl hover:-translate-y-2 hover:border-orange-300 duration-300"
               >
-                <div className="flex items-center mb-6">
-                  <div className="p-3 rounded-lg transition-colors bg-gradient-to-br from-blue-50 to-blue-100 group-hover:from-orange-50 group-hover:to-orange-100">
-                    <IconComponent className="h-8 w-8 text-blue-700 group-hover:text-orange-600 transition-colors" />
+                <div className="mb-6">
+                  <div className="inline-flex p-4 rounded-xl transition-all bg-gradient-to-br from-blue-50 to-blue-100 group-hover:from-orange-500 group-hover:to-orange-600 group-hover:shadow-lg group-hover:shadow-orange-500/30">
+                    <IconComponent className="h-10 w-10 text-blue-700 group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 ml-4">{service.title}</h3>
                 </div>
-                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-orange-600 transition-colors">{service.title}</h3>
+
                 <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
-                
-                <ul className="space-y-2">
+
+                <ul className="space-y-3">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-gray-700">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                      {feature}
+                    <li key={featureIndex} className="flex items-start text-gray-700">
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0 group-hover:scale-150 transition-transform"></div>
+                      <span className="text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
