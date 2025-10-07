@@ -19,9 +19,9 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'Visit Us',
-      details: ['Nagpur, Maharashtra'],
-      action: null,
-      description: 'Central India'
+      details: ['33/34, Indra Nagar Rd, Narsala', 'Dighori, Nagpur 440034'],
+      action: 'https://maps.app.goo.gl/sGfWUxTXPU9Km5sM8',
+      description: 'Get directions'
     }
   ];
 
@@ -87,7 +87,7 @@ const Contact = () => {
           })}
         </div>
 
-        <div className="max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-10 border border-white/10 shadow-2xl">
             <div className="text-center mb-8">
               <h3 className="text-3xl font-bold text-white mb-3">Connect With Us</h3>
@@ -117,6 +117,25 @@ const Contact = () => {
                 <Clock className="h-5 w-5 text-orange-500" />
                 <span className="text-sm">Business Hours: Monday - Saturday, 9:00 AM - 7:00 PM</span>
               </div>
+            </div>
+          </div>
+
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 shadow-2xl overflow-hidden">
+            <div className="text-center mb-6">
+              <h3 className="text-3xl font-bold text-white mb-3">Find Us Here</h3>
+              <p className="text-gray-300">Visit our location in Nagpur</p>
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-2xl border border-white/20">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.0!2d79.14!3d21.12!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4b9e620cf1f41%3A0xc5ba3926d76e3258!2sPavan%20Home%20Decor%2C%2033%2F34%2C%20Indra%20Nagar%20Rd%2C%20Narsala%2C%20Dighori%2C%20Nagpur%2C%20Maharashtra%20440034!5e0!3m2!1sen!2sin!4v1234567890!5m2!1sen!2sin"
+                width="100%"
+                height="350"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Pavan Home Decor Location"
+              ></iframe>
             </div>
           </div>
         </div>
