@@ -12,67 +12,55 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center">
-      <div
+      <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: 'url(https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&fit=crop)'
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-900/70 to-gray-900/80"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/20 to-blue-900/70"></div>
+        <div className="absolute inset-0 bg-blue-900 bg-opacity-70"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/20 to-blue-900/60"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-        <div className="max-w-4xl">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
+        <div className="max-w-3xl">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
             Building Dreams,
-            <span className="block text-orange-500 mt-2">Creating Excellence</span>
+            <span className="text-orange-500"> Creating Excellence</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-200 mb-10 leading-relaxed">
+          <p className="text-xl text-gray-200 mb-8 leading-relaxed">
             Established in 2021 and based in Nagpur, Pavan Home Decor offers end-to-end services in construction, interior design, plumbing, and electrical work. We specialize in transforming residential and commercial spaces with a blend of technical expertise, creative design, and reliable execution.
           </p>
-
-          <div className="flex flex-col sm:flex-row gap-5 mb-16">
+          
+          <div className="flex flex-col sm:flex-row gap-4 mb-12">
             <button
               onClick={scrollToServices}
-              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-10 py-5 rounded-xl font-bold text-lg shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-orange-300"
+              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-orange-300"
             >
-              Explore Our Services
+              Our Services
             </button>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-10">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
-              <div className="flex items-center space-x-4">
-                <div className="bg-orange-500 p-3 rounded-xl">
-                  <Award className="h-8 w-8 text-white" />
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-white">50+</div>
-                  <div className="text-gray-200 text-sm">Projects Completed</div>
-                </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-white">
+            <div className="flex items-center space-x-3">
+              <Award className="h-8 w-8 text-orange-500" />
+              <div>
+                <div className="text-2xl font-bold">50+</div>
+                <div className="text-gray-200">Projects Completed</div>
               </div>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
-              <div className="flex items-center space-x-4">
-                <div className="bg-orange-500 p-3 rounded-xl">
-                  <Users className="h-8 w-8 text-white" />
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-white">100%</div>
-                  <div className="text-gray-200 text-sm">Client Satisfaction</div>
-                </div>
+            <div className="flex items-center space-x-3">
+              <Users className="h-8 w-8 text-orange-500" />
+              <div>
+                <div className="text-2xl font-bold">100%</div>
+                <div className="text-gray-200">Client Satisfaction</div>
               </div>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
-              <div className="flex items-center space-x-4">
-                <div className="bg-orange-500 p-3 rounded-xl">
-                  <Calendar className="h-8 w-8 text-white" />
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-white">5+</div>
-                  <div className="text-gray-200 text-sm">Years Experience</div>
-                </div>
+            <div className="flex items-center space-x-3">
+              <Calendar className="h-8 w-8 text-orange-500" />
+              <div>
+                <div className="text-2xl font-bold">5+</div>
+                <div className="text-gray-200">Years Experience</div>
               </div>
             </div>
           </div>
